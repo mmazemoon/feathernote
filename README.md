@@ -2,23 +2,22 @@
 
 [Heroku link][heroku]
 
-[heroku]: http://flux-capacitr.herokuapp.com
+[heroku]: https://myfeathernote.herokuapp.com/
 
 ## Minimum Viable Product
-Flux-capacitr is a clone of Tumblr built on Rails and Backbone. Users can:
+Feathernote is an open source note-taking app inspired by Evernote. It was built on Rails and Backbone by Mark Azemoon in Summer 2015. Users can:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
-- [x] Create accounts
-- [x] Create sessions (log in)
-- [x] Create blogs
-- [x] Create blog posts
-- [ ] View blogs and posts
-- [ ] Subscribe to blogs
-- [ ] View a feed of subscribed blogs
-- [ ] Tag blog posts
-- [ ] Search for blogs by title
-- [ ] Search for posts by tag
+- [ ] Create accounts
+- [ ] Create sessions (log in/log out)
+- [ ] Create notes and notebooks
+- [ ] Create tags
+- [ ] View notes and notebooks
+- [ ] Organize notes into custom notebooks
+- [ ] Tag notes with multiple tags
+- [ ] Search for notes by title
+- [ ] Search for notes by notebooks or tags
 
 ## Design Docs
 * [View Wireframes][views]
@@ -88,4 +87,3 @@ collections, but they will fetch from the new `search` routes.
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md
 [phase-five]: ./docs/phases/phase5.md
-
