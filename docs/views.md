@@ -16,7 +16,7 @@
 ![notebook-index]
 
 [new-session]: ./wireframes/new_session.png
-[new_user]: ./wireframes/new_user.png
+[new-user]: ./wireframes/new_user.png
 [note-new-show]: ./wireframes/note_new_show.png
 [notes-index]: ./wireframes/notes_index.png
 [notebook-index]: ./wireframes/notebook_index.png
