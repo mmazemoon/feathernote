@@ -1,13 +1,13 @@
-# Phase 4: User Feeds
+# Phase 4: Searching for Blogs and Posts
 
 ## Rails
 ### Models
 
 ### Controllers
-Api::PostsController (feed)
+Api::NotesController (search)
+Api::NotebooksController (search)
 
 ### Views
-posts/feed.json.jbuilder
 
 ## Backbone
 ### Models
@@ -15,6 +15,7 @@ posts/feed.json.jbuilder
 ### Collections
 
 ### Views
-* FeedShow (composite view, contains PostsIndex subview)
+* NoteSearchItem
+* SearchShow (composite view, contains NotesIndex and NotebookIndex subviews)
 
 ## Gems/Libraries

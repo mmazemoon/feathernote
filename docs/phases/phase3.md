@@ -13,9 +13,8 @@
 ### Collections
 
 ### Views
-* PostForm
+* NoteForm
 
 ## Gems/Libraries
-* Filepicker
 * Markdown-js
 * Bootstrap Markdown
