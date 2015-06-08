@@ -3,24 +3,20 @@
 ## New Session
 ![new-session]
 
-## Feed Show (landing page)
-![feed-show]
+## New User
+![new-user]
 
-## Blog Show
-![blog-show]
+## Note New/Show
+![note-new-show]
 
-## Post Show
-![post-show]
+## Notes Index
+![notes-index]
 
-## Post Form
-![post-form]
-
-## Search Results
-![search-results]
+## Notebook Index
+![notebook-index]
 
 [new-session]: ./wireframes/new_session.png
-[feed-show]: ./wireframes/feed_show.png
-[blog-show]: ./wireframes/blog_show.png
-[post-show]: ./wireframes/post_show.png
-[post-form]: ./wireframes/post_form.png
-[search-results]: ./wireframes/search_results.png
+[new_user]: ./wireframes/new_user.png
+[note-new-show]: ./wireframes/note_new_show.png
+[notes-index]: ./wireframes/notes_index.png
+[notebook-index]: ./wireframes/notebook_index.png
