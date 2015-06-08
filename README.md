@@ -1,4 +1,4 @@
-# Flux-capacitr
+# FeatherNote
 
 [Heroku link][heroku]
 
@@ -45,41 +45,26 @@ inside a single Backbone app.
 
 [Details][phase-two]
 
-### Phase 3: Editing and Displaying Notes (~2 days)
-I plan to use third-party libraries to add functionality to the `PostForm` and
-`PostShow` views in this phase. First I'll need to add a Markdown editor to the
-`PostForm`, and make sure that the Markdown is properly escaped and formatted in
-the `PostShow` view. I also plan to integrate Filepicker for file upload so
-users can add images to blog posts.
+### Phase 3: Editing and Organizing Notes (~2 days)
+I plan to use third-party libraries to add design bfunctionality to the `NoteForm` and
+`NoteShow` views in this phase. First I'll need to add a Markdown editor to the
+`NoteForm`, and make sure that the Markdown is properly escaped and formatted in
+the `NoteShow` view.
 
 [Details][phase-three]
 
-### Phase 4: User Feeds (~1-2 days)
-I'll start by adding a `feed` route that uses the `current_user`'s
-`subscribed_blogs` association to serve a list of blog posts ordered
-chronologically. On the Backbone side, I'll make a `FeedShow` view whose `posts`
-collection fetches from the new route.  Ultimately, this will be the page users
-see after logging in.
+### Phase 4: Searching for Notes (~2 days)
+I'll need to add `search` routes to both the Notes and Notebooks controllers. On the
+Backbone side, there will be a `SearchResults` composite view which has `NotesIndex`
+and `NotebookIndex` subviews. These views will use plain old `notes` and `notebook` dcollections, but they will fetch from the new `search` routes.
 
 [Details][phase-four]
 
-### Phase 5: Searching for Blogs and Posts (~2 days)
-I'll need to add `search` routes to both the Blogs and Posts controllers. On the
-Backbone side, there will be a `SearchResults` composite view has `BlogsIndex`
-and `PostsIndex` subviews. These views will use plain old `blogs` and `posts`
-collections, but they will fetch from the new `search` routes.
-
-[Details][phase-five]
-
 ### Bonus Features (TBD)
-- [ ] "Like" button and counter for posts
-- [ ] Custom blog urls
-- [ ] Pagination/infinite scroll
-- [ ] Activity history (e.g. likes, reblogs, taggings)
-- [ ] Post types (image posts, quote posts, etc)
-- [ ] Reblogging
+- [ ] Authenticate email addresses and account activation upon sign-up
+- [ ] Add jQuery UI drag/drop functionality
+- [ ] Allow rich text editing of notes
 - [ ] Multiple sessions/session management
-- [ ] User avatars
 - [ ] Typeahead search bar
 
 [phase-one]: ./docs/phases/phase1.md
