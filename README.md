@@ -56,7 +56,7 @@ the `NoteShow` view.
 ### Phase 4: Searching for Notes (~2 days)
 I'll need to add `search` routes to both the Notes and Notebooks controllers. On the
 Backbone side, there will be a `SearchResults` composite view which has `NotesIndex`
-and `NotebookIndex` subviews. These views will use plain old `notes` and `notebook` dcollections, but they will fetch from the new `search` routes.
+and `NotebookIndex` subviews. These views will use plain old `notes` and `notebook` collections, but they will fetch from the new `search` routes.
 
 [Details][phase-four]
 
