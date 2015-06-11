@@ -1,0 +1,6 @@
+<form class="note-title">
+ <input type="text" name="note[title]" value="<%= note && note.escape("title") %>">
+</form>
+<form class="note-body">
+  <textarea name="note[body" rows="8" cols="40"><%= note && note.escape("body") %></textarea>
+</form>
