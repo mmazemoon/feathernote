@@ -1,8 +1,15 @@
-<div id="main">
     <div id="navbar"></div>
     <div id="searchbar"></div>
+    <div id="sidebar"></div>
+<div id="content">
     <div id="note-show"></div>
     <div id="notes-list"></div>
-    <div id="sidebar"></div>
 </div>
-<script>$(FeatherNote.initialize);</script>
+
+ <!-- on document ready, run this function  -->
+<script>
+  var currentUser = "<%= current_user.email %>";
+  $(function(){
+    FeatherNote.initialize( {currentUser: currentUser} )
+  });
+</script>
