@@ -3,8 +3,21 @@ class User < ActiveRecord::Base
   validates :email, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
-  has_many :notes, dependent: :destroy
-  has_many :notebooks, dependent: :destroy
+  has_many(
+    :notes,
+    class_name: "Note",
+    foreign_key: :author_id,
+    primary_key: :id,
+    dependent: :destroy
+  )
+  
+  has_many(
+    :notebooks,
+    class_name: "Notebook",
+    foreign_key: :author_id,
+    primary_key: :id,
+    dependent: :destroy
+  )
 
   attr_reader :password
   after_initialize :ensure_session_token
