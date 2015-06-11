@@ -1,17 +1,16 @@
-module Api
-  class NotesController < ApiController
+class Api::NotesController < ApiController
+  def create
+  end
 
-    def create  
-    end
+  def show
+  end
 
-    def new
-    end
+  def update
+  end
 
-    def edit
-    end
+  def destroy
+  end
 
-    def index
-    end
-
+  def show
   end
 end
