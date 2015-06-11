@@ -1,4 +1,4 @@
-FeatherNote.Routers.Notes = Backbone.Router.extend({
+FeatherNote.Routers.Router = Backbone.Router.extend({
 
   initialize: function(options){
     this.$rootEl = options.$rootEl;
@@ -7,13 +7,17 @@ FeatherNote.Routers.Notes = Backbone.Router.extend({
   },
 
   routes: {
-    "": "landingNote",
+    "": "welcomeHome",
     "notes/:id": "noteShow",
     "notebooks/:id": "notebookShow"
   },
 
-  landingNote: function () {
-
+  welcomeHome: function () {
+    var notesList = new FeatherNote.Views.NotesIndex({collection: FeatherNote.notes });
+    console.log(FeatherNote.notes);
+    var noteShow = new FeatherNote.Views.NoteShow({collection: FeatherNote.notes });
+    this.$notesList.html(notesList.render().$el);
+    this.$noteShow.html(noteShow.render().$el);
   },
 
   noteShow: function(){
