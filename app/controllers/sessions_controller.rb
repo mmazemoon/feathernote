@@ -5,15 +5,15 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by_credentials(
+    @user = User.find_by_credentials(
       params[:user][:email],
       params[:user][:password]
     )
-    if user
-      sign_in(user)
-      redirect_to links_url
+    if @user
+      login!(@user)
+      redirect_to root_url
     else
-      flash.now[:errors] = ["Invalid email or password"]
+      flash.now[:errors] = ["Incorrect username and/or password"]
       render :new
     end
   end
@@ -22,7 +22,4 @@ class SessionsController < ApplicationController
     logout!
     redirect_to new_session_url
   end
-
-  
-
 end

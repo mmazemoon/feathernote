@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
-  def login(user)
+  def login!(user)
     session[:session_token] = user.reset_session_token!
   end
 
@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
     user.reset_session_token!
     session[:session_token] = nil
   end
-
+  
   # request to unnested controllers e.g. sessions, static_pages
   def ensure_logged_in
     unless logged_in?
