@@ -2,6 +2,10 @@ FeatherNote.Views.Navbar = Backbone.View.extend({
 
   template: JST['static_pages/navbar'],
 
+  events: {
+    "submit form" : "logOut"
+  },
+
   initialize: function (){
     this.currentUser = FeatherNote.currentUser;
   },
@@ -11,4 +15,5 @@ FeatherNote.Views.Navbar = Backbone.View.extend({
     this.$el.html(content);
     return this;
   }
+
 });
