@@ -3,7 +3,7 @@ FeatherNote.Views.Searchbar = Backbone.View.extend({
   template: JST['static_pages/searchbar'],
 
   events: {
-    "submit #add-note": "createNote"
+    "click #add-note": "createNote"
   },
 
   render: function(){
@@ -12,7 +12,12 @@ FeatherNote.Views.Searchbar = Backbone.View.extend({
   },
 
   createNote: function(event){
-    event.preventDefault();
+    var note = new FeatherNote.Models.Note({
+      title: "Untitled",
+      notebook_id: 1,
+      author_id: 1
+    });
+
   }
 
 });
