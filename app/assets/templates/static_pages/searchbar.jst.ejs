@@ -1,7 +1,2 @@
 Hello from the searchbar!
-<form id="add-note" action="/api/notes" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= $("meta[name='csrf-token']").attr("content") %>">
-  <input type="hidden" name="note[title]" value="Untitled">
-  <input type="hidden" name="note[body]" placeholder="Start writing your note...">
-  <input type="submit" value="+ New Note">
-</form>
+<button type="button" class="create-note">+ New Note</button>
