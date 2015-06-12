@@ -13,16 +13,20 @@ FeatherNote.Routers.Router = Backbone.Router.extend({
   },
 
   welcomeHome: function () {
-    var notesList = new FeatherNote.Views.NotesIndex({collection: FeatherNote.notes });
-    console.log(FeatherNote.notes);
-    var noteShow = new FeatherNote.Views.NoteShow({collection: FeatherNote.notes });
-    this.$notesList.html(notesList.render().$el);
-    this.$noteShow.html(noteShow.render().$el);
+    // var notesList = new FeatherNote.Views.NotesIndex({collection: FeatherNote.notes });
+    // var model = FeatherNote.notes.get(1);
+    // var noteShow = new FeatherNote.Views.NoteShow({ model: FeatherNote.notes.get(1) });
+    // this.$notesList.html(notesList.render().$el);
+    // this.$noteShow.html(noteShow.render().$el);
+    this.showNote(6);
   },
 
-  noteShow: function(){
+  showNote: function(id){
     // should change notes index
     // and notes index items too
+    var note = FeatherNote.notes.getOrFetch(id);
+    var showNote = new FeatherNote.Views.NoteShow({ model: note });
+    this.$noteShow.html(showNote.render().$el);
   },
 
   notebookShow: function(){
