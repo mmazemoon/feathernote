@@ -11,15 +11,16 @@ window.FeatherNote = {
     FeatherNote.notes.fetch( {reset: true} );
     FeatherNote.notebooks.fetch( {reset: true} );
 
-    var $searchbar = $("#searchbar");
     var $navbar = $("#navbar");
-    new FeatherNote.Routers.Router( {$rootEl: $("#content")} );
+    var $searchbar = $("#searchbar");
+    var $sidebar = $("#sidebar");
+    new FeatherNote.Routers.Router( {$rootEl: $(".content")} );
 
-    // var navbarView = new FeatherNote.Views.NavbarView();
-    // var searchbarView = new FeatherNote.Views.SearchbarView();
+    var navbar = new FeatherNote.Views.Navbar();
+    var searchbar = new FeatherNote.Views.Searchbar();
     // var sidebarView = new FeatherNote.Views.SidebarView();
-    // $navbar.html(navbarView.render().$el);
-    // $searchbar.html(searchbarView.render().$el);
+    $navbar.html(navbar.render().$el);
+    $searchbar.html(searchbar.render().$el);
     // $sidebar.html(sidebarView.render().$el);
 
     Backbone.history.start();
