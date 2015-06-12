@@ -24,5 +24,4 @@ FeatherNote.Views.NoteShow = Backbone.View.extend({
     });
   }
 
-
 });

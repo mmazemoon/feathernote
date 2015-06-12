@@ -8,6 +8,7 @@ window.FeatherNote = {
 
     FeatherNote.notes = new FeatherNote.Collections.Notes();
     FeatherNote.notebooks = new FeatherNote.Collections.Notebooks();
+
     FeatherNote.notes.fetch( {reset: true} );
     FeatherNote.notebooks.fetch( {reset: true} );
 

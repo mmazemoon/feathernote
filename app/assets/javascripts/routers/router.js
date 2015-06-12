@@ -18,7 +18,7 @@ FeatherNote.Routers.Router = Backbone.Router.extend({
     // var noteShow = new FeatherNote.Views.NoteShow({ model: FeatherNote.notes.get(1) });
     // this.$notesList.html(notesList.render().$el);
     // this.$noteShow.html(noteShow.render().$el);
-    this.showNote(6);
+    this.showNote(2);
   },
 
   showNote: function(id){

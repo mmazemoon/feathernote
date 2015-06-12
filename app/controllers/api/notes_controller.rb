@@ -15,6 +15,12 @@ module Api
     end
 
     def update
+      @note = Note.find(params[:id])
+      if @note.update(note_params)
+        render json: @note
+      else
+        render json: @note.errors.full_messages, status: :unprocessable_entity
+      end
     end
 
     def destroy
