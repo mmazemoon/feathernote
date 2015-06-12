@@ -18,10 +18,10 @@ window.FeatherNote = {
 
     var navbar = new FeatherNote.Views.Navbar();
     var searchbar = new FeatherNote.Views.Searchbar();
-    // var sidebarView = new FeatherNote.Views.SidebarView();
+    var notebooksIndex = new FeatherNote.Views.NotebooksIndex();
     $navbar.html(navbar.render().$el);
     $searchbar.html(searchbar.render().$el);
-    // $sidebar.html(sidebarView.render().$el);
+    $sidebar.html(notebooksIndex.render().$el);
 
     Backbone.history.start();
   }
