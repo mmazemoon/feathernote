@@ -1,6 +1,6 @@
 <dl>
   <% notes.each(function(note){ %>
-  <dt><%= note.title %></dt>
-  <dd><%= note.body %></dd>
+  <dt><%= note.escape("title") %></dt>
+  <dd><%= note.escape("body") %></dd>
   <% }) %>
 </dl>

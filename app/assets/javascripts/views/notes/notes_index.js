@@ -3,7 +3,7 @@ FeatherNote.Views.NotesIndex = Backbone.View.extend({
   template: JST['notes/index'],
 
   initialize: function(){
-    this.listenTo(this.collection, "reset", this.render);
+    this.listenTo(this.collection, "sync", this.render);
   },
 
   render: function(){
