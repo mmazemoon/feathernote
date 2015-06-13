@@ -17,6 +17,7 @@
 //= require jquery.serializejson.min
 //= require feather_note
 //= require_tree ../templates
+//= require_tree ./utils
 //= require_tree ./models
 //= require_tree ./collections
 //= require_tree ./views
