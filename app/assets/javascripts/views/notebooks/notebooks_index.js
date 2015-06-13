@@ -3,7 +3,7 @@ FeatherNote.Views.NotebooksIndex = Backbone.View.extend({
 
   initialize: function(){
     this.collection = FeatherNote.notebooks;
-    this.listenTo(this.collection, "sync", this.render);
+    this.listenTo(this.collection, "sync change", this.render);
   },
 
   render: function(){
