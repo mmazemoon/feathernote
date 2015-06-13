@@ -1,5 +1,5 @@
 <ul>
   <% notebooks.each(function(notebook){ %>
-  <li><%= notebook.escape("name") %></li>
+  <li><a href="#/notebooks/<%= notebook.id %>"><%= notebook.escape("name")%></a></li>
   <%  })  %>
 </ul>
