@@ -1,7 +1,11 @@
 FeatherNote.Models.Notebook = Backbone.Model.extend({
 
-  urlRoot: "api/notebooks"
+  urlRoot: "api/notebooks",
 
-  
+  parse: function(){
+  },
+
+  notes: function(){
+  }
 
 });

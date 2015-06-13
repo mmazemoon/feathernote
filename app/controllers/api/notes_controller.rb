@@ -1,7 +1,7 @@
 module Api
   class  NotesController < ApiController
     def create
-      @note = current_user.notes.new(note_params) # special new, defined on ar associations.
+      @note = current_user.notes.new(note_params) 
       if @note.save
         render json: @note
       else

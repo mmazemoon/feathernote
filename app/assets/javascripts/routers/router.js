@@ -29,7 +29,7 @@ FeatherNote.Routers.Router = Backbone.Router.extend({
     this.$noteShow.html(noteShow.render().$el);
   },
 
-  notebookShow: function(){
+  notebookShow: function(id){
 
   },
 
