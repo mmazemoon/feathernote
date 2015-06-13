@@ -5,12 +5,16 @@ window.FeatherNote = {
   Routers: {},
   initialize: function(options) {
     FeatherNote.currentUser = options.currentUser;
-
     FeatherNote.notes = new FeatherNote.Collections.Notes();
     FeatherNote.notebooks = new FeatherNote.Collections.Notebooks();
 
-    FeatherNote.notes.fetch( {reset: true} );
-    FeatherNote.notebooks.fetch( {reset: true} );
+    FeatherNote.notes.fetch({ reset: true });
+    FeatherNote.notebooks.fetch({
+      success: function(collection, response, options){
+        FeatherNote.currentNotebook = FeatherNote.notebooks.at(0);
+      },
+      reset: true
+    });
 
     var $navbar = $("#navbar");
     var $searchbar = $("#searchbar");
