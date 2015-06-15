@@ -83,7 +83,7 @@ notes = Note.create([
     -- Add a tag to a note by clicking on the '+ Tag' button
     -- Like or delete a note by clicking on the like and delete buttons at the top right of the screen
     -- Comment on a note by clicking ",
-    notebook_id: 1,
+    notebook_id: 3,
     author_id: 2
   },
 
@@ -97,7 +97,7 @@ notes = Note.create([
     -- Add a tag to a note by clicking on the '+ Tag' button
     -- Like or delete a note by clicking on the like and delete buttons at the top right of the screen
     -- Comment on a note by clicking ",
-    notebook_id: 1,
+    notebook_id: 4,
     author_id: 2
   },
   { title: "3 - Welcome to FeatherNote!",
@@ -110,7 +110,7 @@ notes = Note.create([
     -- Add a tag to a note by clicking on the '+ Tag' button
     -- Like or delete a note by clicking on the like and delete buttons at the top right of the screen
     -- Comment on a note by clicking ",
-    notebook_id: 1,
+    notebook_id: 3,
     author_id: 2
   }
   ])
