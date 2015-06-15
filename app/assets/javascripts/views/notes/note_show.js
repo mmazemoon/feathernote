@@ -7,11 +7,19 @@ FeatherNote.Views.NoteShow = Backbone.View.extend({
   },
 
   initialize: function (){
+    this.listenTo(this.collection, "sync", this.setNote);
     this.listenTo(this.model, "change", this.render);
   },
 
+  setNote: function(){
+    if(!this.model){
+      this.model = FeatherNote.notes.at(0);
+    }
+    this.render();
+  },
+
   render: function(){
-    var content = this.template({ note: this.model });
+    var content = this.template({ note: this.model, notebooks: this.collection });
     this.$el.html(content);
     return this;
   },
@@ -23,5 +31,6 @@ FeatherNote.Views.NoteShow = Backbone.View.extend({
       wait: true
     });
   }
+
 
 });

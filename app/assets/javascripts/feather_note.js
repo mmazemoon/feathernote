@@ -18,8 +18,8 @@ window.FeatherNote = {
     });
 
     var $navbar = $("#navbar");
-    var $searchbar = $("#searchbar");
-    var $sidebar = $("#sidebar");
+    var $searchbar = $(".searchbar");
+    var $sidebar = $(".sidebar");
     new FeatherNote.Routers.Router( {$rootEl: $(".content")} );
 
     var navbar = new FeatherNote.Views.Navbar();

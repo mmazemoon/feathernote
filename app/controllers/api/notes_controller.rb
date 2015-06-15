@@ -1,7 +1,7 @@
 module Api
   class  NotesController < ApiController
     def create
-      @note = current_user.notes.new(note_params) 
+      @note = current_user.notes.new(note_params)
       if @note.save
         render json: @note
       else
@@ -10,8 +10,8 @@ module Api
     end
 
     def show
-      @note = Note.find(params[:id])
-      render json: @note
+      @note = Note.includes(:notebook).find(params[:id])
+      render :show
     end
 
     def update
@@ -27,8 +27,8 @@ module Api
     end
 
     def index
-      @notes = current_user.notes
-      render json: @notes
+      @notes = current_user.notes.includes(:notebook) # for n + 1 query
+      render :index
     end
 
     private

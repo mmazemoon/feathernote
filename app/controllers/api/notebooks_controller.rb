@@ -11,7 +11,7 @@ module Api
 
     def show
       @notebook = Notebook.find(params[:id])
-      render json: @notebook
+      render :show
     end
 
     def update
@@ -23,7 +23,7 @@ module Api
 
     def index
       @notebooks = current_user.notebooks
-      render json: @notebooks
+      render :index
     end
 
     private

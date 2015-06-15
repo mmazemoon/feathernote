@@ -2,8 +2,8 @@ FeatherNote.Routers.Router = Backbone.Router.extend({
 
   initialize: function(options){
     this.$rootEl = options.$rootEl;
-    this.$notesList = this.$rootEl.find("#notes-list");
-    this.$noteShow = this.$rootEl.find("#note-show");
+    this.$notesList = this.$rootEl.find(".notes-list");
+    this.$noteShow = this.$rootEl.find(".note-show");
   },
 
   routes: {
@@ -20,12 +20,10 @@ FeatherNote.Routers.Router = Backbone.Router.extend({
 
   noteShow: function(id){
     var note;
-    if (!id){
-      note = FeatherNote.notes.at(0);
-    } else {
+    if (id){
       note = FeatherNote.notes.getOrFetch(id);
     }
-    var noteShow = new FeatherNote.Views.NoteShow({ model: note });
+    var noteShow = new FeatherNote.Views.NoteShow({ model: note, collection: FeatherNote.notebooks });
     this.$noteShow.html(noteShow.render().$el);
   },
 
