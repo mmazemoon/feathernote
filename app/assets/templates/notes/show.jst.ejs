@@ -9,7 +9,7 @@
       <ul class="options-dropdown hidden">
         <% notebooks.each(function(notebook) { %>
       <li data-notebook-id="<%= notebook.escape("id") %>">
-        <%= (notebook === note.notebook) ? "class='selected'" : "" %>>
+        <%= (note && (notebook === note.notebook)) ? "class='selected'" : "" %>>
         <form class="update-notebook">
           <input type="hidden" name="note[notebook_id]" value="<%= notebook.escape("id") %>">
           <div class="submit">

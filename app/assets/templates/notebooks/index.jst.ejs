@@ -1,5 +1,5 @@
 <ul>
   <% notebooks.each(function(notebook){ %>
-  <li><a href="#/notebooks/<%= notebook.id %>"><%= notebook.escape("name") %></a></li>
+  <li class="notebook-name-sidebar", data-notebook-id="<%= notebook.id %>"><a href="#/notebooks/<%= notebook.id %>"><%= notebook.escape("name") %></a></li>
   <%  })  %>
 </ul>

@@ -28,7 +28,10 @@ FeatherNote.Routers.Router = Backbone.Router.extend({
   },
 
   notebookShow: function(id){
-
+    var notebook = FeatherNote.notebooks.getOrFetch(id);
+    FeatherNote.activeNotebook = notebook;
+    var notebookShow = new FeatherNote.Views.NotebookShow();
+    this.$notesList.html(notebookShow.render().$el);
   },
 
   _swapListView: function(){

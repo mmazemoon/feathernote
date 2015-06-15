@@ -7,11 +7,11 @@ FeatherNote.Views.NoteShow = Backbone.View.extend({
   },
 
   initialize: function (){
-    this.listenTo(this.collection, "sync", this.setNote);
+    this.listenTo(this.collection, "sync", this.setNoteModel);
     this.listenTo(this.model, "change", this.render);
   },
 
-  setNote: function(){
+  setNoteModel: function(){
     if(!this.model){
       this.model = FeatherNote.notes.at(0);
     }
@@ -31,6 +31,5 @@ FeatherNote.Views.NoteShow = Backbone.View.extend({
       wait: true
     });
   }
-
 
 });

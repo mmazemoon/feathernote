@@ -11,10 +11,8 @@ window.FeatherNote = {
     FeatherNote.notes.fetch({ reset: true });
     FeatherNote.notebooks.fetch({
       success: function(collection, response, options){
-        FeatherNote.currentNotebook = FeatherNote.notebooks.at(0);
-        console.log(FeatherNote.currentNotebook);
-      },
-      reset: true
+        FeatherNote.activeNotebook = FeatherNote.notebooks.at(0);
+      }, reset: true
     });
 
     var $navbar = $("#navbar");
