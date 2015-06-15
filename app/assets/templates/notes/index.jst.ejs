@@ -1,8 +1,8 @@
 <ul>
+  <% notes.each(function(note){ %>
   <li>
-    <% notes.each(function(note){ %>
-    <div><%= note.escape("title") %></div>
+    <div><a href="#/notes/<%= note.id %>"><%= note.escape("title") %></a></div>
     <div><%= note.escape("body") %></div>
-    <% }) %>
   </li>
+  <% }) %>
 </ul>
