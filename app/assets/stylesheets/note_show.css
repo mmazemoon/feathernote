@@ -1,0 +1,311 @@
+.note-show {
+  position: absolute;
+  left: 582px;
+  top: 69px;
+  bottom: 0;
+  right: 0;
+  display: block;
+  overflow: auto;
+}
+
+.note-show header {
+  background: #F3F5F7;
+  border-bottom: 1px solid #b3b3b3;
+}
+
+.note-show-header-left {
+  float: left;
+}
+
+.note-show-header-right {
+  float: right;
+  position: relative;
+  padding-right: 12px;
+}
+
+.note-show-header-left > .notebook-name {
+  color: rgb(122, 125, 129);
+  position: relative;
+  float: left;
+  padding-left: 14px;
+}
+
+.notebook-name > .notebook-name-text {
+  font-size: 12px;
+  line-height: 36px;
+  padding-right: 24px;
+  float: left;
+  cursor: pointer;
+}
+
+.notebook-name > .friend-note {
+  cursor: auto;
+}
+
+.notebook-name > .options-dropdown,
+.add-tag > .options-dropdown {
+  max-height: 300px;
+  width: auto;
+  max-width: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.notebook-name > .options-dropdown {
+  left: 20px;
+  top: 30px;
+}
+
+.add-tag > .options-dropdown {
+  left: 0;
+  top: 30px;
+}
+
+.notebook-name .submit > button,
+.add-tag li > button {
+  width: 100%;
+  text-align: left;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  background: transparent;
+  border: 0;
+  padding: 4px 5px;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+}
+
+.notebook-name li.selected {
+  background: #CECECE;
+}
+
+.notebook-name li:hover,
+.add-tag li:hover {
+  background: #d1d4d7;
+}
+
+.note-show-header-left > .tags {
+  padding: 7px;
+  float: left;
+}
+
+.tags > li {
+  background: #dfe7ec;
+  border: 1px solid #b6bdc3;
+  display: inline-block;
+  font-size: 11px;
+  min-height: 13px;
+  color: #52555a;
+  float: left;
+  border-radius: 12px;
+  padding: 2px 10px;
+  margin-right: 6px;
+}
+
+.delete-tag, .add-tag,
+.comments-header > .note-show-header-left:hover {
+  cursor: pointer;
+}
+
+.add-tag {
+  position: relative;
+}
+
+.add-tag .options-dropdown {
+  color: #7A7D81;
+  top: 20px;
+  font-size: 11px;
+}
+
+.note-show-header-right .info-text, .note-show-button {
+  padding-right: 7px;
+  color: #7a7d81;
+  font-size: 12px;
+  line-height: 36px;
+  cursor: pointer;
+}
+
+.note-show-header-right > form {
+  float: left;
+}
+
+.note-show-button {
+  border: 0;
+  padding: 0 7px;
+  margin: 0;
+  background: transparent;
+  line-height: 34px;
+  cursor: pointer;
+  float: left;
+}
+
+.note-show-header-right .info-text:hover, .note-show-button:hover {
+  color: #525f67
+}
+
+.note-info {
+  background: #fff;
+  border: 1px solid #b3b3b3;
+  border-radius: 5px;
+  padding: 4px;
+  font-size: 12px;
+  width: 240px;
+  position: absolute;
+  left: -190px;
+  z-index: 50;
+}
+
+.note-info-field {
+  width: 65px;
+  padding-right: 5px;
+}
+
+.note-show-header-left > .dates > li {
+  float: left;
+  font-size: 12px;
+  color: #7d7e80;
+  padding-left: 14px;
+  line-height: 34px;
+}
+
+.note-content {
+  background: white;
+  border: 1px solid #A7A7A7;
+  border-radius: 3px;
+  margin: 12px;
+  padding: 10px;
+  min-height: 336px;
+  overflow: auto;
+}
+
+form.note-title > input#note-title,
+.friend-note-title {
+  padding-bottom: 4px;
+  border-bottom: 1px solid #A7A7A7;
+  font-family: "Caecilia LT Std";
+  font-size: 15px;
+  color: #7b7c7e;
+  width: 100%;
+}
+
+form.note-title,
+.friend-note-title {
+  margin-bottom: 8px;
+}
+
+form.note-body > textarea,
+.friend-note.body {
+  padding: 0 4px;
+}
+
+textarea, .friend-note-body {
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  display: block;
+  margin: 0;
+  padding: 0 4px;
+  border: 0;
+  outline: 0;
+  width: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  background: transparent;
+  color: inherit;
+  overflow: auto;
+  resize: none;
+}
+
+textarea#note-body,
+.friend-note-body {
+  font-size: 14px;
+  line-height: 19px;
+  min-height: 304px;
+}
+
+.comments {
+  margin-top: 12px;
+}
+
+.comments-header {
+  border-top: 1px solid #b3b3b3;
+  border-bottom: 1px solid #b3b3b3;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgb(122, 125, 129);
+}
+
+.comments-header > .note-show-header-left {
+  padding-left: 12px;
+}
+
+.comment-list-text {
+  margin-top: 8px;
+  font-size: 12px;
+  font-style: italic;
+  color: rgb(122, 125, 129);
+}
+
+.no-comments {
+  padding-left: 12px;
+}
+
+.comments-list {
+  padding: 0 12px;
+}
+
+.comments-list > li, .comment-form textarea {
+  background: white;
+  margin-top: 10px;
+  border: 1px solid #b3b3b3;
+  border-radius: 3px;
+  padding: 8px;
+  font-size: 14px;
+  color: #3A3A3A;
+  resize: none;
+}
+
+.comment-form {
+  padding: 0 12px 20px 12px;
+}
+
+.comment-form textarea:focus {
+  border: 1px solid #0992ca;
+  box-shadow: 0 0 4px #0992ca;
+}
+
+.comments-list > li > .comment-info {
+  font-style: italic;
+  font-size: 12px;
+  color: #7b7c7e;
+}
+
+.comment-info-left {
+  float: left;
+}
+
+.comment-info-right {
+  float: right;
+}
+
+.comments-list > li > .comment-body {
+  font-size: 14px;
+  padding-bottom: 8px;
+}
+
+.note-show-button.comment {
+  background: transparent;
+  padding-left: 8px;
+  line-height: 14px;
+}
+
+.new-comment {
+  margin-top: 14px;
+  margin-bottom: 20px;
+  padding-left: 12px;
+}
+
+.post-comment {
+  margin-top: 10px;
+}

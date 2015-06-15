@@ -1,6 +1,59 @@
-<form class="note-title">
- <input type="text" id="note-title" name="note[title]" value="<%= note && note.escape("title") %>">
-</form>
-<form class="note-body">
-  <textarea name="note[body]" rows="8" cols="40"><%= note && note.escape("body") %></textarea>
-</form>
+<header class="note-show-top group">
+  <div class="note-show-header-left top">
+    <div class="notebook-name dropdown-parent group">
+      <div class="notebook-name-text">
+        <i class="fa fa-book"></i>
+        <%= note && note.notebook().escape("name") %>
+        &nbsp; <i class="fa fa-angle-down"></i>
+      </div>
+      <ul class="options-dropdown hidden">
+        <% notebooks.each(function(notebook) { %>
+      <li data-notebook-id="<%= notebook.escape("id") %>">
+        <%= (notebook === note.notebook) ? "class='selected'" : "" %>>
+        <form class="update-notebook">
+          <input type="hidden" name="note[notebook_id]" value="<%= notebook.escape("id") %>">
+          <div class="submit">
+            <button >
+              <i class="fa fa-book"></i>&nbsp;
+              <%= notebook.escape("name") %>
+            </button>
+          </div>
+        </form>
+      </li>
+      <% }) %>
+    </ul>
+  </div>
+</div>
+
+<div class="note-show-header-right top dropdown-parent">
+  <div class="info-text">
+    INFO&nbsp;
+    <i class="fa fa-info-circle"></i>
+  </div>
+</div>
+</div>
+</header>
+
+<header class="note-show-bottom group">
+  <div class="note-show-header-left">
+    <ul class="dates">
+      <li>Created: <%= note && moment(note.escape("created_at")).format('MMM D, YYYY') %></li>
+      <li>Modified: <%= note && moment(note.escape("updated_at")).format('MMM D, YYYY') %></li>
+    </ul>
+  </div>
+  <div class="note-show-header-right bottom">
+    <div class="note-show-button delete-note">
+      DELETE
+      <i class="fa fa-trash-o"></i>
+    </div>
+  </div>
+</header>
+
+<section class="note-content">
+  <form class="note-title">
+    <input type="text" name="note[title]"  id="note-title" value="<%= note && note.escape("title") %>">
+  </form>
+  <form class="note-body">
+    <textarea name="note[body]" id="note-body"><%= note && note.escape("body") %></textarea>
+  </form>
+</section>

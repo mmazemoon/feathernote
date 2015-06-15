@@ -15,6 +15,7 @@
 //= require underscore
 //= require backbone
 //= require jquery.serializejson.min
+//= require moment.js
 //= require feather_note
 //= require_tree ../templates
 //= require_tree ./utils
