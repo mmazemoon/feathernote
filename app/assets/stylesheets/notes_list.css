@@ -1,11 +1,10 @@
 .notes-list {
-  width: 360px;
+  box-sizing: border-box;
+  float: left;
+  width: 25%;
   background: white;
   border-right: 1px solid #b3b3b3;
-  position: fixed;
-  top: 69px;
-  left: 221px;
-  bottom: 39px;
+  margin: 0 auto;
   overflow: auto;
 }
 

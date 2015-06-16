@@ -91,8 +91,7 @@ header.note-show-top > * {
 }*/
 
 @font-face {
-  font-family: "Caecilia LT Std";
-  src: asset-url("CaeciliaLTStd-Roman.ttf") format("truetype");
+  font-family: 'Arvo', serif;
 }
 
 html, body, header, section, div, span, h1, h2, h3, a, form, ul, li, i {
@@ -160,4 +159,15 @@ ul {
 h2 {
   font-size: 30px;
   font-weight: bold;
+}
+#navbar {
+
+    background: #55ACEE;
+    color: #FFF;
+    font-family: 'Arvo', serif;
+    border-bottom: 1px solid #000;
+}
+
+.notes-list {
+  padding: 1em;
 }

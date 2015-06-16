@@ -1,12 +1,9 @@
 .sidebar {
-  width: 220px;
+  box-sizing: border-box;
+  width: 15%;
   border-right: 1px solid #B3B3B3;
   background: #EAEDEF;
   float: left;
-  position: fixed;
-  top: 69px;
-  left: 0;
-  bottom: 0;
   overflow: auto;
 }
 
