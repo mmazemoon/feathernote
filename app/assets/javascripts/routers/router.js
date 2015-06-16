@@ -12,8 +12,8 @@ FeatherNote.Routers.Router = Backbone.Router.extend({
     "notebooks/:id": "notebookShow"
   },
 
-  welcomeHome: function () {
-    var notesList = new FeatherNote.Views.NotesIndex({collection: FeatherNote.notes });
+  landingPage: function () {
+    var notesList = new FeatherNote.Views.NotesIndex({ collection: FeatherNote.notes });
     this.$notesList.html(notesList.render().$el);
     this.noteShow();
   },
@@ -21,9 +21,17 @@ FeatherNote.Routers.Router = Backbone.Router.extend({
   noteShow: function(id){
     var note;
     if (id){
-      note = FeatherNote.notes.getOrFetch(id);
+      note = FeatherNote.notes.getOrFetch(
+        id,
+        function(model, response, options){
+          this.notebookShow(model.notebook().id);
+        }.bind(this)
+      );
     }
-    var noteShow = new FeatherNote.Views.NoteShow({ model: note, collection: FeatherNote.notebooks });
+    var noteShow = new FeatherNote.Views.NoteShow({
+      model: note,
+      collection: FeatherNote.notebooks
+    });
     this.$noteShow.html(noteShow.render().$el);
   },
 

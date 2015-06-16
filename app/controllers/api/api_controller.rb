@@ -6,7 +6,9 @@ module Api
       unless logged_in?
         render json: ["You must be signed in to perform that action!"],
         status: :unauthorized
+        redirect_to new_session_url
       end
     end
+
   end
 end

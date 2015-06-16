@@ -10,12 +10,12 @@ module Api
     end
 
     def show
-      @note = Note.includes(:notebook).find(params[:id])
+      @note = current_user.notes.includes(:notebook).find(params[:id])
       render :show
     end
 
     def update
-      @note = Note.find(params[:id])
+      @note = current_user.notes.find(params[:id])
       if @note.update(note_params)
         render json: @note
       else

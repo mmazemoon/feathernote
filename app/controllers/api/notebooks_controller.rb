@@ -1,7 +1,7 @@
 module Api
   class NotebooksController < ApiController
     def create
-      @notebook = Notebook.new(notebook_params)
+      @notebook = current_user.notebooks.new(notebook_params)
       if @notebook.save
         render json: @notebook
       else
@@ -10,12 +10,12 @@ module Api
     end
 
     def show
-      @notebook = Notebook.find(params[:id])
+      @notebook = current_user.notebooks.find(params[:id])
       render :show
     end
 
     def update
-      @notebook = Notebook.find(params[:id])
+      @notebook = current_user.notebooks.find(params[:id])
     end
 
     def destroy
