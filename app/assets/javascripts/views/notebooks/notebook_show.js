@@ -7,12 +7,8 @@ FeatherNote.Views.NotebookShow = Backbone.CompositeView.extend({
   template: JST['notebooks/show'],
 
   initialize: function(){
-    this.addMyView();
-  },
-
-  addMyView: function(){
-    this.addSubview(".notes-list-content", this.subView()); // selector: where to attach subView
-    this.render();
+    this.addSubview(".notes-list-content", this.subView());
+    this.listenTo(this.model, "sync", this.render);
   },
 
   render: function(){
@@ -26,7 +22,7 @@ FeatherNote.Views.NotebookShow = Backbone.CompositeView.extend({
     if(this._subView){
       this.removeSubview(".notes-list-content", this._subView);
     }
-    this._subView = new FeatherNote.Views.NotesIndex({ collection: FeatherNote.activeNotebook.notes() });
+    this._subView = new FeatherNote.Views.NotesIndex({ collection: this.model.notes() });
     return this._subView; // an object
   }
 

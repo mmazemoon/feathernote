@@ -3,6 +3,12 @@ FeatherNote.Collections.Notes = Backbone.Collection.extend({
   url: "/api/notes",
   model: FeatherNote.Models.Note,
 
+  initialize: function(models, options){
+    if(options && options.notebook){
+      this.notebook = options.notebook;
+    }
+  },
+
   getOrFetch: function(id, callback){
     var note = FeatherNote.notes.get(id);
     if (note){
