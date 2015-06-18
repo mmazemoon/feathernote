@@ -2,7 +2,7 @@ FeatherNote.Collections.Notebooks = Backbone.Collection.extend({
   url: "api/notebooks",
   model: FeatherNote.Models.Notebook,
 
-// we could also do options.success
+// we could also do options.success if we had given options;
   getOrFetch: function(id, callback){
     var notebook = this.get(id);
     if(notebook){

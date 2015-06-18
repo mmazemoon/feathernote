@@ -14,9 +14,7 @@ FeatherNote.Collections.Notes = Backbone.Collection.extend({
     if (note){
       note.fetch({
         success: function(model, response, options){
-          if(callback){
-            callback(model, response, options);
-          }
+          if(callback){ callback(model, response, options); }
         }
       });
     } else {
@@ -24,9 +22,7 @@ FeatherNote.Collections.Notes = Backbone.Collection.extend({
       note.fetch({
         success: function(model, response, options){
           FeatherNote.notes.add(note);
-          if(callback){
-            callback(model, response, options);
-          }
+          if(callback){ callback(model, response, options); }
         }
       });
     }
