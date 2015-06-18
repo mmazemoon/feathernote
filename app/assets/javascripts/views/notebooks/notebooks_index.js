@@ -1,9 +1,9 @@
 FeatherNote.Views.NotebooksIndex = Backbone.View.extend({
-  
+
   template: JST["notebooks/index"],
 
   initialize: function(){
-    this.listenTo(this.collection, "sync change", this.render);
+    this.listenTo(this.collection, "sync add remove", this.render);
   },
 
   render: function(){

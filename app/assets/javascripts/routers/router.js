@@ -29,8 +29,8 @@ FeatherNote.Routers.Router = Backbone.Router.extend({
 
   noteShow: function(id){
     var note = FeatherNote.notes.getOrFetch(id,
-      function(){
-        var noteShow = new FeatherNote.Views.NoteShow({model: note});
+      function(model){
+        var noteShow = new FeatherNote.Views.NoteShow({model: model});
         this._swapShowView(noteShow);
         if(!this._hasNotesList){
           this.siblingNotes(note.notebook().id);

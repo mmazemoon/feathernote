@@ -11,18 +11,18 @@ FeatherNote.Views.NotesIndex = Backbone.View.extend({
 
   render: function () {
     var content;
-    var fragment = "notes";
+    var fragment = "#/notes/";
 
     if(this.all){
       content = this.template({ notes: this.collection, all: true });
       if(this.id) {
-        fragment.concat("/all/" + this.id);
+        fragment = fragment.concat("all/" + this.id);
       } else {
-        fragment.concat("/all/" + this.collection.first().id);
+        fragment = fragment.concat("all/" + this.collection.first().id);
       }
     } else {
       content = this.template({ notes: this.collection, all: false });
-      fragment.concat(this.id);
+      fragment = fragment.concat(this.id);
     }
 
     Backbone.history.navigate(fragment);

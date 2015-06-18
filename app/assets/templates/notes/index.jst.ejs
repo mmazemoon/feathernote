@@ -3,12 +3,13 @@
     <% notes.each(function(note){ %>
     <li>
       <% if (all) { %>
-        <div><a href="#notes/all/<%= note.id %>"><%= note.escape("title") %></a></div>
+        <div><a href="#/notes/all/<%= note.id %>"><%= note.escape("title") %></a></div>
       <% } else { %>
-        <div><a href="#notes/<%= note.id %>"><%= note.escape("title") %></a></div>
+        <div><a href="#/notes/<%= note.id %>"><%= note.escape("title") %></a></div>
       <% } %>
       <div><%= note.escape("body") %></div>
     </li>
+    <br>
     <% }) %>
   </ul>
 </section>
