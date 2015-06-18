@@ -164,15 +164,22 @@ h2 {
   font-size: 30px;
   font-weight: bold;
 }
-#navbar {
-background: -webkit-linear-gradient(90deg, #00c6ff 10%, #0072ff 90%); /* Chrome 10+, Saf5.1+ */
-background:    -moz-linear-gradient(90deg, #00c6ff 10%, #0072ff 90%); /* FF3.6+ */
-background:     -ms-linear-gradient(90deg, #00c6ff 10%, #0072ff 90%); /* IE10 */
-background:      -o-linear-gradient(90deg, #00c6ff 10%, #0072ff 90%); /* Opera 11.10+ */
-background:         linear-gradient(90deg, #00c6ff 10%, #0072ff 90%); /* W3C */
 
-    color: #FFF;
-    font-family: 'Roboto', sans-serif;    border-bottom: 1px solid #000;
+.top-border {
+  background-color: #3B5999;
+  height: .5em;
+  border-bottom: 1px solid #fff;
+}
+
+#navbar {
+  background: -webkit-linear-gradient(90deg, #00c6ff 10%, #0072ff 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #00c6ff 10%, #0072ff 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #00c6ff 10%, #0072ff 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #00c6ff 10%, #0072ff 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #00c6ff 10%, #0072ff 90%); /* W3C */
+
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;    border-bottom: 1px solid #000;
 }
 
 .notes-list {
@@ -209,7 +216,7 @@ background:         linear-gradient(90deg, #00c6ff 10%, #0072ff 90%); /* W3C */
   margin: auto;
 }
 
-form.sign-in{
+form.sign-in, form.create-account {
   margin-left: 40%;
   margin-right:40%;
   width: 100%;

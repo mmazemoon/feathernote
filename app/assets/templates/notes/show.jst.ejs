@@ -7,7 +7,7 @@
         &nbsp; <i class="fa fa-angle-down"></i>
       </div>
       <ul class="options-dropdown hidden">
-        <% notebooks.each(function(notebook) { %>
+        <% notebooks && notebooks.each(function(notebook) { %>
       <li data-notebook-id="<%= notebook.escape("id") %>">
         <%= (note && (notebook === note.notebook)) ? "class='selected'" : "" %>>
         <form class="update-notebook">
