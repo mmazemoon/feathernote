@@ -1,7 +1,8 @@
 .note-show {
+  #background: #F8F8F8
   box-sizing: border-box;
   float: right;
-  width: 60%;
+  width: 53%;
   display: block;
   overflow: auto;
   margin: 0 auto;
@@ -170,7 +171,7 @@
 }
 
 .note-content {
-  background: white;
+  background: #FFF;
   border: 1px solid #D1D2D4;
   border-radius: 3px;
   margin: 12px;

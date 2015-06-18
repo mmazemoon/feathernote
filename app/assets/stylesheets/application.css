@@ -91,7 +91,7 @@ header.note-show-top > * {
 }*/
 
 @font-face {
-  font-family: 'Arvo', serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 html, body, header, section, div, span, h1, h2, h3, a, form, ul, li, i {
@@ -102,6 +102,10 @@ html, body, header, section, div, span, h1, h2, h3, a, form, ul, li, i {
   vertical-align: baseline;
 }
 
+html, body {
+  height: 100%;
+  width: 100%;
+}
 input[type="text"],
 input[type="textarea"],
 input[type="submit"] {
@@ -139,8 +143,8 @@ button:focus {
 }
 
 body {
-  font-family: sans-serif;
-  background: #F0F2F4;
+  font-family: 'Roboto', sans-serif;
+    background: #F3F3F3;
 }
 
 a {
@@ -161,13 +165,60 @@ h2 {
   font-weight: bold;
 }
 #navbar {
+background: -webkit-linear-gradient(90deg, #00c6ff 10%, #0072ff 90%); /* Chrome 10+, Saf5.1+ */
+background:    -moz-linear-gradient(90deg, #00c6ff 10%, #0072ff 90%); /* FF3.6+ */
+background:     -ms-linear-gradient(90deg, #00c6ff 10%, #0072ff 90%); /* IE10 */
+background:      -o-linear-gradient(90deg, #00c6ff 10%, #0072ff 90%); /* Opera 11.10+ */
+background:         linear-gradient(90deg, #00c6ff 10%, #0072ff 90%); /* W3C */
 
-    background: #55ACEE;
     color: #FFF;
-    font-family: 'Arvo', serif;
-    border-bottom: 1px solid #000;
+    font-family: 'Roboto', sans-serif;    border-bottom: 1px solid #000;
 }
 
 .notes-list {
   padding: 1em;
+  height: 100%;
+  overflow: auto;
+}
+
+#searchbar {
+  box-sizing: border-box;
+  background: #F0F3F4;
+  border-bottom: 1px solid #000;
+  overflow: hidden;
+}
+
+.content{
+    position: fixed;
+    top: 100px;
+    bottom: 1px;
+    left: 0;
+    right: 0;
+    overflow: auto;
+}
+
+#sidebar {
+  height: 100px;
+    left: 0;
+    right: 0;
+    overflow: auto;
+}
+
+#welcome-logo{
+  display: block;
+  margin: auto;
+}
+
+form.sign-in{
+  margin-left: 40%;
+  margin-right:40%;
+  width: 100%;
+}
+#app-logo{
+  display: block;
+  float: left;
+}
+#search-function{
+  display: block;
+  float: left;
 }

@@ -1,4 +1,6 @@
-<form action="<%= session_url %>" method="post">
+  <img id="welcome-logo" src="<%= image_path('final-welcome-logo.png') %>" />
+
+<form class="sign-in" action="<%= session_url %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <label>Your Email Address
     <br><input type="text" name="user[email]" value="<%= @user.email if @user %>">
