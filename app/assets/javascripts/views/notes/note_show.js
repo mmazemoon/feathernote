@@ -1,4 +1,4 @@
-FeatherNote.Views.NoteShow = Backbone.View.extend({
+Feathernote.Views.NoteShow = Backbone.View.extend({
 
   template: JST['notes/show'],
 

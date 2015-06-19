@@ -1,15 +1,17 @@
-FeatherNote.Views.NotesIndex = Backbone.View.extend({
-  
+Feathernote.Views.NotesIndex = Backbone.View.extend({
+
+  className: "bb-notes-list",
   template: JST['notes/index'],
 
 // options: all, id, collection, model
   initialize: function(options){
-    this.listenTo(this.collection, "add remove sync change", this.render);
     this.all = options.all || false;
     this.id = options.id || null;
+    this.listenTo(this.collection, "add remove sync change", this.render);
   },
 
   render: function (){
+
     var content;
     var fragment = "notes/";
 
@@ -25,7 +27,10 @@ FeatherNote.Views.NotesIndex = Backbone.View.extend({
       fragment = fragment.concat(this.id);
     }
 
-    Backbone.history.navigate(fragment);
+    if (this.all || this.id){
+      Backbone.history.navigate(fragment);
+    }
+
     this.$el.html(content);
     return this;
   }
