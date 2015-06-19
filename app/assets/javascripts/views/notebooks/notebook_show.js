@@ -1,4 +1,4 @@
-// FeatherNote.Views.NotebookShow = Backbone.CompositeView.extend({
+// Feathernote.Views.NotebookShow = Backbone.CompositeView.extend({
 //
 //   events: {
 //     "click li.notebook-name-sidebar": "addMyView"

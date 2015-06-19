@@ -27,8 +27,12 @@ module Api
     end
 
     def index
-      @notes = current_user.notes.includes(:notebook) # for n + 1 query
-      render :index
+      if params[:search]
+
+      else
+        @notes = current_user.notes.includes(:notebook) # for n + 1 query
+        render :index
+      end
     end
 
     private

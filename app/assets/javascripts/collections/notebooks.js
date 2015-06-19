@@ -1,6 +1,6 @@
-FeatherNote.Collections.Notebooks = Backbone.Collection.extend({
+Feathernote.Collections.Notebooks = Backbone.Collection.extend({
   url: "api/notebooks",
-  model: FeatherNote.Models.Notebook,
+  model: Feathernote.Models.Notebook,
 
 // we could also do options.success if we had given options;
   getOrFetch: function(id, callback){
@@ -14,10 +14,10 @@ FeatherNote.Collections.Notebooks = Backbone.Collection.extend({
         }
       });
     } else {
-      notebook = new FeatherNote.Models.Notebook({id: id});
+      notebook = new Feathernote.Models.Notebook({id: id});
       notebook.fetch({
         success: function(model, response, options){
-          FeatherNote.notebooks.add(notebook);
+          Feathernote.notebooks.add(notebook);
           if(callback){
             callback(model, response, options);
           }

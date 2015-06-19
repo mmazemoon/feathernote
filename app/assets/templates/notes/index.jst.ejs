@@ -1,15 +1,14 @@
 <section class="notes-list-content">
-  <ul>
+  <ul class="note-preview">
     <% notes.each(function(note){ %>
     <li>
       <% if (all) { %>
-        <div><a href="#/notes/all/<%= note.id %>"><%= note.escape("title") %></a></div>
+        <div id="preview-note-title"><a href="#/notes/all/<%= note.id %>"><%= note.escape("title") %></a></div>
       <% } else { %>
-        <div><a href="#/notes/<%= note.id %>"><%= note.escape("title") %></a></div>
+        <div id="preview-note-title"><a href="#/notes/<%= note.id %>"><%= note.escape("title") %></a></div>
       <% } %>
-      <div><%= note.escape("body") %></div>
+      <div id="preview-note-body"><%= note.escape("body") %></div>
     </li>
-    <br>
     <% }) %>
   </ul>
 </section>

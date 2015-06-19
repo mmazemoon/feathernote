@@ -1,7 +1,7 @@
-FeatherNote.Collections.Notes = Backbone.Collection.extend({
+Feathernote.Collections.Notes = Backbone.Collection.extend({
 
   url: "/api/notes",
-  model: FeatherNote.Models.Note,
+  model: Feathernote.Models.Note,
 
   initialize: function(models, options){
     if(options && options.notebook){
@@ -10,7 +10,7 @@ FeatherNote.Collections.Notes = Backbone.Collection.extend({
   },
 
   getOrFetch: function(id, callback){
-    var note = FeatherNote.notes.get(id);
+    var note = Feathernote.notes.get(id);
     if (note){
       note.fetch({
         success: function(model, response, options){
@@ -18,10 +18,10 @@ FeatherNote.Collections.Notes = Backbone.Collection.extend({
         }
       });
     } else {
-      note = new FeatherNote.Models.Note({ id: id });
+      note = new Feathernote.Models.Note({ id: id });
       note.fetch({
         success: function(model, response, options){
-          FeatherNote.notes.add(note);
+          Feathernote.notes.add(note);
           if(callback){ callback(model, response, options); }
         }
       });

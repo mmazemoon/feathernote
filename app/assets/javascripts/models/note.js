@@ -1,4 +1,4 @@
-FeatherNote.Models.Note = Backbone.Model.extend({
+Feathernote.Models.Note = Backbone.Model.extend({
 
   urlRoot: "/api/notes",
 
@@ -12,7 +12,7 @@ FeatherNote.Models.Note = Backbone.Model.extend({
 
   notebook: function(){
     if(!this._notebook){
-      this._notebook = new FeatherNote.Models.Notebook();
+      this._notebook = new Feathernote.Models.Notebook();
     }
     return this._notebook;
   }

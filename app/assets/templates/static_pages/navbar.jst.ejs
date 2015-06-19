@@ -1,6 +1,8 @@
-Welcome <%= currentUser %>
-<form id="log-out" action="/session" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <input type="hidden" name="authenticity_token" value="<%= $("meta[name='csrf-token']").attr("content") %>">
-  <input type="submit" value="Log out">
-</form>
+<div class="navbar-content">
+  Welcome <%= currentUser %>
+  <form id="log-out" action="/session" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="hidden" name="authenticity_token" value="<%= $("meta[name='csrf-token']").attr("content") %>">
+    <input type="submit" value="Log out">
+  </form>
+</div>

@@ -1,4 +1,4 @@
-# FeatherNote
+# Feathernote
 
 [Heroku link][heroku]
 

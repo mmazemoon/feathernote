@@ -1,4 +1,4 @@
-FeatherNote.Views.Navbar = Backbone.View.extend({
+Feathernote.Views.Navbar = Backbone.View.extend({
 
   template: JST['static_pages/navbar'],
 
@@ -7,7 +7,7 @@ FeatherNote.Views.Navbar = Backbone.View.extend({
   },
 
   initialize: function (){
-    this.currentUser = FeatherNote.currentUser;
+    this.currentUser = Feathernote.currentUser;
   },
 
   render: function(){

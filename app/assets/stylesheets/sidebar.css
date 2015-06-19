@@ -1,10 +1,11 @@
 .sidebar {
   box-sizing: border-box;
-  width: 17%;
+  width: 13%;
   border-right: 1px solid #B3B3B3;
   background: #EAEDEF;
   float: left;
   overflow: auto;
+  height: 100%
 }
 
 .sidebar-header {
