@@ -1,9 +1,0 @@
-.notes-list {
-  box-sizing: border-box;
-  float: left;
-  width: 30%;
-  background: white;
-  border-right: 1px solid #b3b3b3;
-  margin: 0 auto;
-  overflow: auto;
-}

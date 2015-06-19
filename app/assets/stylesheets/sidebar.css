@@ -74,14 +74,14 @@ article.sidebar-item li:hover,
   cursor: pointer;
 }
 
-a > .notebook-name,
+/*a > .notebook-name,
 a > .tag-name {
   float: left;
   max-width: 150px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-}
+}*/
 
 a > .notes-count {
   float: left;
