@@ -1,7 +1,5 @@
 FeatherNote.Views.Searchbar = Backbone.View.extend({
-
   template: JST['static_pages/searchbar'],
-
   events: {
     "click .create-note": "createNote"
   },
@@ -18,7 +16,7 @@ FeatherNote.Views.Searchbar = Backbone.View.extend({
     });
     note.save({}, {
       success: function(){
-        Backbone.history.navigate("notes/" + note.id, { trigger: true });
+        Backbone.history.navigate("#/notes/" + note.id, { trigger: true });
       }
     });
   }

@@ -1,5 +1,5 @@
 FeatherNote.Views.NotesIndex = Backbone.View.extend({
-
+  
   template: JST['notes/index'],
 
 // options: all, id, collection, model
@@ -9,9 +9,9 @@ FeatherNote.Views.NotesIndex = Backbone.View.extend({
     this.id = options.id || null;
   },
 
-  render: function () {
+  render: function (){
     var content;
-    var fragment = "#/notes/";
+    var fragment = "notes/";
 
     if(this.all){
       content = this.template({ notes: this.collection, all: true });
@@ -29,28 +29,6 @@ FeatherNote.Views.NotesIndex = Backbone.View.extend({
     this.$el.html(content);
     return this;
   }
-
-  //   // if it doesn't have a model, we give it one
-  //   if (!this.model){
-  //     if (this.id)
-  //       this.model = this.collection.get(this.id);
-  //     else {
-  //       this.model = this.collection.at(0);
-  //     }
-  //     // all will always end up being with an id
-  //     if (this.all) {
-  //       Backbone.history.navigate("notes/all/" + this.model.id, {trigger: true});
-  //     } else {
-  //       Backbone.history.navigate("notes/" + this.model.id, {trigger: true});
-  //     }
-  //   }
-  //   var content = this.template({
-  //     notes: this.collection,
-  //     all: this.all
-  //   });
-  //   this.$el.html(content);
-  //   return this;
-  // }
 
 });
 
