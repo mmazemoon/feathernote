@@ -72,18 +72,17 @@ Feathernote.Routers.Router = Backbone.Router.extend({
       this._swapListView(this._hasNotesList);
   },
 
-  siblingNotes: function(note, notebookId){
-    // var notebook = Feathernote.notebooks.getOrFetch(
-    //   notebookId,
-    //   function(model, response, options){
-    //     var notes = notebook.notes();
-    //     this._hasNotesList = new Feathernote.Views.NotesIndex({
-    //       collection: notes,
-    //       model: note
-    //     });
-    //     this._swapListView(this._hasNotesList);
-    //   }.bind(this)
-    // );
+  siblingNotes: function(notebookId){
+    var notebook = Feathernote.notebooks.getOrFetch(
+      notebookId,
+      function(model, response, options){
+        var notes = notebook.notes();
+        this._hasNotesList = new Feathernote.Views.NotesIndex({
+          collection: notes
+        });
+        this._swapListView(this._hasNotesList);
+      }.bind(this)
+    );
   },
 
 _swapShowView: function(view) {
