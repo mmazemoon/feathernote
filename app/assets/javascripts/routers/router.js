@@ -7,9 +7,9 @@ FeatherNote.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    "": "showAll",
-    "notes/all": 'showAll',
-    "notes/all/:id": "showAll",
+    "": "allShow",
+    "notes/all": 'allShow',
+    "notes/all/:id": "allShow",
     "notes/:id": "noteShow",
     "notebooks/:id": "notebookShow"
   },
@@ -22,6 +22,7 @@ FeatherNote.Routers.Router = Backbone.Router.extend({
         this._hasNotesList = new FeatherNote.Views.NotesIndex({
           collection: notes,
           id: notes.first().id });
+          this.noteShow(notes.first().id);
           this._swapListView(this._hasNotesList);
       }.bind(this)
     );
@@ -30,37 +31,14 @@ FeatherNote.Routers.Router = Backbone.Router.extend({
   noteShow: function(id){
     var note = FeatherNote.notes.getOrFetch(id,
       function(model){
-        var noteShow = new FeatherNote.Views.NoteShow({model: model});
+        FeatherNote.activeNote = model;
+        var noteShow = new FeatherNote.Views.NoteShow({ model: model});
         this._swapShowView(noteShow);
         if(!this._hasNotesList){
           this.siblingNotes(note.notebook().id);
         }
       }.bind(this));
   },
-
-    // var note;
-    // if (all) {
-    //   note = FeatherNote.notes.getOrFetch(id);
-    //   var noteShow = new FeatherNote.Views.NoteShow({
-    //     model: note,
-    //     collection: FeatherNote.notebooks
-    //   });
-    //   this._swapShowView(noteShow);
-    // } else {
-    //   note = FeatherNote.notes.getOrFetch(
-    //     id,
-    //     function (model, response, options) {
-    //       if (!this._hasNotesList){
-    //         this.siblingNotes(note, note.get('notebook_id'));
-    //       }
-    //       var noteShow = new FeatherNote.Views.NoteShow({
-    //         model: note,
-    //         collection: FeatherNote.notebooks
-    //       });
-    //       this._swapShowView(noteShow);
-    //     }.bind(this)
-    //   );
-    // }
 
   siblingNotes: function(note, notebookId){
     // var notebook = FeatherNote.notebooks.getOrFetch(
@@ -76,7 +54,7 @@ FeatherNote.Routers.Router = Backbone.Router.extend({
     // );
   },
 
-  showAll: function (id) {
+  allShow: function (id) {
   FeatherNote.notes.fetch({
       success: function(collection){
         if(collection.first()){
@@ -91,22 +69,6 @@ FeatherNote.Routers.Router = Backbone.Router.extend({
       reset: true
     });
   },
-
-    // this._hasNotesList = true;
-    // FeatherNote.notes.fetch({
-    //   success: function(){
-    //     var notesIndex= new FeatherNote.Views.NotesIndex({
-    //       collection: FeatherNote.notes,
-    //       all: true,
-    //       id: id  // could be zero;
-    //     });
-    //     this._swapListView(notesIndex);
-    //   }.bind(this),
-    //   reset: true
-    // });
-    // if (id){
-    //   this.noteShow(id, true); // if id, call note show with id and zero
-    // }
 
 _swapShowView: function(view) {
   this._currentShowView && this._currentShowView.remove();
