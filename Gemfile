@@ -12,6 +12,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'newrelic_rpm'
 gem 'backbone-on-rails'
 gem 'font-awesome-rails'
+gem 'tinymce-rails'
 
 group :development, :test do
   gem 'byebug'

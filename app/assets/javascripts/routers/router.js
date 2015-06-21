@@ -88,13 +88,15 @@ Feathernote.Routers.Router = Backbone.Router.extend({
 _swapShowView: function(view) {
   this._currentShowView && this._currentShowView.remove();
   this._currentShowView = view;
-  this.$noteShow.html(view.render().$el);
-},
+  this.$noteShow.html(view.$el);
+  view.render();
+  },
 
 _swapListView: function(view) {
   this._currentListView && this._currentListView.remove();
   this._currentListView = view;
-  this.$notesList.html(view.render().$el);
+  this.$notesList.html(view.$el);
+  view.render();
 }
 
 });

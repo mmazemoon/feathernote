@@ -8,8 +8,11 @@
           <a href="#/notes/<%= note.id %>"><span class="link-spanner"></a>
       <% } %>
       <li>
-        <div id="preview-note-title"><%= note.escape("title") %></div>
-        <div id="preview-note-body"><%= note.escape("body") %></div>
+        <% var title = note.escape("title") %>
+        <div id="preview-note-title"><%= $("<p>").html(title).text() %></div>
+        <% var body = note.escape("body") %>
+        <div id="preview-note-body"><%= $("<p>").html(body).text()
+ %></div>
       </li>
     </section>
     <% }) %>
