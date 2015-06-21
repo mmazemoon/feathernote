@@ -1,0 +1,60 @@
+/*Notes Index*/
+
+.notes-list {
+  height: 100%;
+  box-sizing: border-box;
+  float: left;
+  width: 20%;
+  background: white;
+  border-right: 1px solid #b3b3b3;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+.preview-note-link {
+  position:relative;
+}
+
+.link-spanner{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left: 0;
+  z-index: 1;
+}
+
+.note-preview li {
+  box-sizing: border-box;
+  height: 75px;
+  border-bottom: 1px solid #e6e6e6;
+  cursor: pointer;
+  padding-left: 3px;
+  padding-top: 5px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.preview-note-link:hover {
+  background: #D1D4D7;
+}
+
+#preview-note-body {
+  height: 48px;
+  font-size: 11px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 16px;
+  padding-top: 1px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+#preview-note-title{
+  color: #1d1d1d;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  width: 95%;
+  margin: 0 auto;
+}
