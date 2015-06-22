@@ -1,22 +1,44 @@
 <div class="top-border"></div>
-<img id="welcome-logo" src="<%= image_path('final-welcome-logo.png') %>" />
+<img id="welcome-logo" src="<%= image_path('feathernote-welcome-logo.png') %>" />
 
-<form class="form-style-9" action="<%= session_url %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <ul>
-  <li>
-    <label>Email address
-    <input type="text" class="field-style field-full align-none" name="user[email]" placeholder="e.g. john@doe.com" value="<%= @user.email if @user %>">
-    </label>
-  </li>
-  <li>
-    <label>Password
-      <br><input type="password" class="field-style field-full align-none" name="user[password]">
-    </label>
-  </li>
-  <li>
-    <input type="submit" value="Sign in">
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Don't have an account?
-  </li>
-  </ul>
-</form>
+<section class="animate-wrapper">
+<div class='preload login--container'>
+  <form class='login--form' action="<%= session_url %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <div class='login--username-container'>
+      <label>Email address</label>
+      <input autofocus placeholder='Email address' type='text' name="user[email]" >
+    </div>
+    <div class='login--password-container'>
+      <label>Password</label>
+      <input name="user[password]" placeholder='Password' type='password'>
+      <input type="submit" class='js-toggle-login login--login-submit' value="Sign in">
+    </div>
+  </form>
+  <div class='login--toggle-container'>
+    <small>Hello,&nbsp;</small>
+    <div class='js-toggle-login'>Login</div>
+    <!-- <small>here</small> -->
+  </div>
+</div>
+</section>
+
+<script type="text/javascript">
+(function () {
+  $(function () {
+      $('.login--container').removeClass('preload');
+      this.timer = window.setTimeout(function (_this) {
+          return function () {
+              return $('.login--container').toggleClass('login--active');
+          };
+      }(this), 2000);
+      return $('.js-toggle-login').click(function (_this) {
+          return function () {
+              window.clearTimeout(_this.timer);
+              $('.login--container').toggleClass('login--active');
+              return $('.login--username-container input').focus();
+          };
+      }(this));
+  });
+}.call(this));
+</script>

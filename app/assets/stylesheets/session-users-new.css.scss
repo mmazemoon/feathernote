@@ -1,0 +1,187 @@
+/* New Session and Users */
+
+section.animate-wrapper {
+  color: #fff;
+  margin: 0 auto;
+  position: relative;
+  top: 9%;
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .preload * {
+    transition: none !important;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    font-size: small;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    margin-bottom: 0.35em;
+  }
+
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    border: none;
+    padding: 0.5em;
+    border-radius: 2px;
+    margin-bottom: 0.5em;
+    color: #333;
+  }
+  input[type="text"]:focus, input[type="password"]:focus {
+    outline: none;
+    box-shadow: inset -1px -1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  input[type="submit"] {
+    cursor: pointer;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    border: none;
+    border-radius: 2px;
+    background-color: #348AC7;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+    color: #fff;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.45);
+  }
+
+  small {
+    color: #fafafa;
+    font-size: 1em;
+  }
+
+  .login--login-submit {
+    float: right;
+  }
+
+  .login--container {
+    width: 600px;
+    background-color: #2b53a9;
+    margin: 0 auto;
+    position: relative;
+    top: 25%;
+  }
+
+  .login--toggle-container {
+    position: absolute;
+    background-color: #2b53a9;
+    right: 0;
+    line-height: 2.5em;
+    width: 50%;
+    height: 120px;
+    text-align: right;
+    cursor: pointer;
+    transform: perspective(1000px) translateZ(1px);
+    transform-origin: 0% 0%;
+    transition: all 1s cubic-bezier(0.06, 0.63, 0, 1);
+    backface-visibility: hidden;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius:10px;
+  }
+  .login--toggle-container .js-toggle-login {
+    font-size: 4em;
+    text-decoration: underline;
+    color: #fafafa;
+  }
+  .login--active .login--toggle-container {
+    transform: perspective(1000px) rotateY(180deg);
+    background-color: #bc1012;
+  }
+
+  .login--username-container, .login--password-container {
+    float: left;
+    background-color: #2b53a9;
+    width: 50%;
+    height: 120px;
+    padding: 0.5em;
+  }
+
+  .login--username-container {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transform-origin: 100% 0%;
+    transform: perspective(1000px) rotateY(180deg);
+    transition: all 1s cubic-bezier(0.06, 0.63, 0, 1);
+    background-color: #bc1012;
+    backface-visibility: hidden;
+  }
+
+  .login--password-container {
+    border-left: 1px dotted #fff;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .login--active .login--username-container {
+    transform: perspective(1000px) rotateY(0deg);
+    background-color: #2b53a9;
+  }
+}
+
+/*.form-style-9{
+    max-width: 350px;
+    background: #fff;
+    padding: 30px;
+    margin: 25px auto;
+    border-radius: 10px;
+    border: 6px solid #3b5999;
+}
+.form-style-9 ul{
+    padding:0;
+    margin:0;
+    list-style:none;
+}
+.form-style-9 ul li{
+    display: block;
+    margin-bottom: 10px;
+    min-height: 35px;
+}
+.form-style-9 ul li  .field-style{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 8px;
+    outline: none;
+    border: 1px solid #B0CFE0;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+
+}.form-style-9 ul li  .field-style:focus{
+    box-shadow: 0 0 5px #B0CFE0;
+    border:1px solid #B0CFE0;
+}
+.form-style-9 ul li .field-split{
+    width: 49%;
+}
+.form-style-9 ul li .field-full{
+    width: 100%;
+}
+
+.form-style-9 ul li input[type="button"],
+.form-style-9 ul li input[type="submit"] {
+    -moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
+    box-shadow: inset 0px 1px 0px 0px #3985B1;
+    background-color: #216288;
+    border: 1px solid #17445E;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFFFFF;
+    padding: 8px 18px;
+    text-decoration: none;
+    font: 12px Arial, Helvetica, sans-serif;
+}
+.form-style-9 ul li input[type="button"]:hover,
+.form-style-9 ul li input[type="submit"]:hover {
+    background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
+    background-color: #3b5999;
+}*/

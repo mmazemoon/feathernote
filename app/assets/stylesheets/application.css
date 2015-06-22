@@ -38,17 +38,13 @@ input[type="text"],
 input[type="textarea"],
 input[type="submit"] {
   -webkit-appearance: none;
-  box-sizing: content-box;
+  box-sizing: border-box;
   display: inline-block;
   margin: 0;
   padding: 0;
   border: 0;
   outline: 0;
-  font: inherit;
   vertical-align: baseline;
-  width: auto;
-  background: transparent;
-  color: inherit;
 }
 
 input[type="submit"] {
@@ -59,7 +55,7 @@ input[type="submit"] {
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #f3f3f3;
-  background-position: -1px -1px,4px 3px;
+  background-position: 12px -4px, 0px 0px;
   background-image: radial-gradient(#c0c0c0 5%, transparent 6%);
   background-image: -webkit-radial-gradient(#c0c0c0 5%, transparent 6%);
   background-size: 35px 35px;
@@ -111,12 +107,6 @@ h2 {
   margin: auto;
 }
 
-form.sign-in, form.create-account {
-  margin-left: 50%;
-  margin-right:50%;
-  width: 100%;
-}
-
 /*Navbar*/
 
 #navbar {
@@ -164,6 +154,10 @@ form.sign-in, form.create-account {
   position: relative;
   left: 30em;
   top: 10px;
+}
+
+input.notes-search, button.create-note {
+  width: auto;
 }
 
 /*Content Wrapper*/

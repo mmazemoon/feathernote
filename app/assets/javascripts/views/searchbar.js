@@ -33,8 +33,5 @@ Feathernote.Views.Searchbar = Backbone.View.extend({
     // in order to bookmark urls.
     // Feathernote.notes.fetch({ data: { query: query } });
   }
-
-
-
-
+  
 });
