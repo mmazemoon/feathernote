@@ -1,6 +1,6 @@
 <ul>
-  <li class="all-notes-sidebar"><a href="#/notes/all">All Notes</a></li>
+  <li class="all-notes-sidebar"><a href="#/notes/all"><i class="fa fa-file-text"></i>&nbsp;All Notes</a></li>
     <% notebooks.each(function(notebook){ %>
-  <li class="notebook-name-sidebar"><a href="#/notebooks/<%= notebook.id %>"><%= notebook.escape("name") %></a></li>
+  <li class="notebook-name-sidebar"><a href="#/notebooks/<%= notebook.id %>"><i class="fa fa-book"></i>&nbsp;<%= notebook.escape("name") %></a></li>
     <%  })  %>
 </ul>

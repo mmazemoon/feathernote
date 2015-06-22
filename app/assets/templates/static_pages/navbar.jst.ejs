@@ -1,8 +1,10 @@
 <div class="navbar-content">
+  <i class="fa fa-user"></i>
   Welcome <%= currentUser %>
+  <i class="fa fa-caret-down"></i>
   <form id="log-out" action="/session" method="post">
     <input type="hidden" name="_method" value="delete">
     <input type="hidden" name="authenticity_token" value="<%= $("meta[name='csrf-token']").attr("content") %>">
-    <input type="submit" value="Log out">
+    <button><i class="fa fa-sign-out"></i>Sign Out</button>
   </form>
 </div>

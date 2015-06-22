@@ -1,15 +1,45 @@
 <div class="top-border"></div>
-<img id="welcome-logo" src="<%= image_path('final-welcome-logo.png') %>" />
+<img id="welcome-logo" src="<%= image_path('feathernote-welcome-logo.png') %>" />
 
-<form class="create-account" action="<%= users_url %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label>Your Email Address
-    <br><input type="text" name="user[email]" value="<%= @user.email if @user %>">
-  </label>
-  <br>
-  <label>Create a Password
-    <br><input type="password" name="user[password]">
-  </label>
-  <p><small>By clicking Create Account, I agree to the Terms of Service and Privacy Policy.</small></p>
-  <input type="submit" name="name" value="Create Account">
-</form>
+<section class="animate-wrapper">
+<div class='preload login--container'>
+  <form class='login--form' action="<%= users_url %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <div class='login--username-container'>
+      <label>Your Email Address</label>
+      <input autofocus placeholder='Email address' type='text' name="user[email]" >
+    </div>
+    <div class='login--password-container'>
+      <label>Create a Password</label>
+      <input name="user[password]" placeholder='Password' type='password'>
+      <input type="submit" class='js-toggle-login login--login-submit' value="Create Account">
+      <a id="create-new-account" href="/session/new">Already have an account? Sign in</a>
+    </div>
+  </form>
+  <div class='login--toggle-container'>
+    <small>Hello,&nbsp;</small>
+    <div class='js-toggle-login'>Sign up</div>
+    <!-- <small>here</small> -->
+  </div>
+</div>
+</section>
+
+<script type="text/javascript">
+(function () {
+  $(function () {
+      $('.login--container').removeClass('preload');
+      this.timer = window.setTimeout(function (_this) {
+          return function () {
+              return $('.login--container').toggleClass('login--active');
+          };
+      }(this), 2000);
+      return $('.js-toggle-login').click(function (_this) {
+          return function () {
+              window.clearTimeout(_this.timer);
+              $('.login--container').toggleClass('login--active');
+              return $('.login--username-container input').focus();
+          };
+      }(this));
+  });
+}.call(this));
+</script>

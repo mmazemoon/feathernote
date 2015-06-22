@@ -2,6 +2,8 @@ Feathernote.Views.Navbar = Backbone.View.extend({
 
   template: JST['static_pages/navbar'],
 
+  className: "abcd",
+
   events: {
     "submit form" : "logOut"
   },

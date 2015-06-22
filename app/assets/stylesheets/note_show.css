@@ -222,7 +222,7 @@ textarea#note-body,
 .friend-note-body {
   font-size: 14px;
   line-height: 19px;
-  min-height: 304px;
+  min-height: 500px;
 }
 
 .comments {

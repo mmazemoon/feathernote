@@ -110,6 +110,7 @@ h2 {
 /*Navbar*/
 
 #navbar {
+  box-sizing: border-box;
   background: -webkit-linear-gradient(90deg, #3B5999 10%, #348AC7 90%); /* Chrome 10+, Saf5.1+ */
   background:    -moz-linear-gradient(90deg, #3B5999 10%, #348AC7 90%); /* FF3.6+ */
   background:     -ms-linear-gradient(90deg, #3B5999 10%, #348AC7 90%); /* IE10 */
@@ -119,20 +120,20 @@ h2 {
   font-family: 'Roboto', sans-serif;
   border-bottom: 1px solid #B3B3B3;
   color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 32px;
 }
 
 .navbar-content{
   width: 100%;
-  position: relative;
+  position: fixed;
   left: 100em;
 }
 
 /*Searchbar*/
-
-#app-logo{
-  display: block;
-  float: left;
-}
 
 #searchbar{
   background: rgba(237,240,240,1);
@@ -147,26 +148,45 @@ h2 {
   box-sizing: border-box;
   border-bottom: 1px solid #B3B3B3;
   overflow: hidden;
+  position: fixed;
+  top: 32px;
+  left: 0px;
+  right: 0px;
+  height: 49px;
 }
 
-.searchbar-content{
-  display: block;
-  position: relative;
-  left: 30em;
-  top: 10px;
+#app-logo{
+  float: left;
 }
 
-input.notes-search, button.create-note {
+div.search-input{
+  position: absolute;
+  top: 20px;
+  left: 250px;
   width: auto;
 }
+
+.notes-search{
+  width: 230px
+}
+
+.new-note {
+  position: absolute;
+  top: 25px;
+  left: 640px;
+  width: auto;
+}
+
+
 
 /*Content Wrapper*/
 
 .content{
     position: fixed;
-    top: 94px;
+    top: 81px;
     bottom: 1px;
     left: 0;
     right: 0;
-    overflow: auto;
+    height: 100%;
+    overflow: hidden;
 }
