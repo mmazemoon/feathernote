@@ -55,7 +55,7 @@ input[type="submit"] {
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #f3f3f3;
-  background-position: 12px -4px, 0px 0px;
+  background-position: 8px -2px, 0px 0px;
   background-image: radial-gradient(#c0c0c0 5%, transparent 6%);
   background-image: -webkit-radial-gradient(#c0c0c0 5%, transparent 6%);
   background-size: 35px 35px;
@@ -97,14 +97,27 @@ h2 {
 /*Login Page*/
 
 .top-border {
+  width: 100%;
   background-color: #3B5999;
   height: .5em;
   border-bottom: 1px solid #fff;
 }
 
-#welcome-logo{
+#welcome-logo {
+  width: 80%;
   display: block;
   margin: auto;
+}
+
+/* internal-header-wrapper */
+#head-wrap {
+  width: 100%;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 81px;
 }
 
 /*Navbar*/
@@ -120,17 +133,84 @@ h2 {
   font-family: 'Roboto', sans-serif;
   border-bottom: 1px solid #B3B3B3;
   color: #fff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 32px;
+  width: 100%;
+  min-height: 32px;
 }
 
-.navbar-content{
+.bb-navbar{
+  height: 100%;
   width: 100%;
-  position: fixed;
-  left: 100em;
+  padding: 0;
+  margin: 0;
+}
+
+.bb-navbar * {
+  box-sizing: border-box;
+}
+
+.bb-navbar ul {
+  float: right;
+  text-align: center;
+  display: inline;
+  margin: 0;
+  list-style: none;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+.bb-navbar ul li {
+  display: inline-block;
+  position: relative;
+  padding: 6px 10px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.bb-navbar ul li:hover {
+  background: #348AC7;
+  color: #fff;
+}
+.bb-navbar ul li ul {
+  padding: 0;
+  position: absolute;
+  top: 31px;
+  right: 0;
+  width: 100%;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transiton: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -transition: opacity 0.2s;
+}
+
+.bb-navbar ul li ul li {
+  height: 46px;
+  top: 1px;
+  background: #EDF0F0;
+  display: block;
+  color: #3b5999;
+  padding-top: 0.6em;
+  /*text-shadow: 0 -1px 0 #000;*/
+  border-bottom-left-radius: .25em;
+  border-bottom-left-radius: .25em;
+}
+.bb-navbar ul li ul li:hover {
+  background: #EDF0F0;
+  color: #3b5999; }
+
+.bb-navbar ul li:hover ul {
+  display: inline;
+  opacity: 1;
+  visibility: visible;
 }
 
 /*Searchbar*/
@@ -147,37 +227,51 @@ h2 {
 
   box-sizing: border-box;
   border-bottom: 1px solid #B3B3B3;
-  overflow: hidden;
-  position: fixed;
-  top: 32px;
-  left: 0px;
-  right: 0px;
-  height: 49px;
+  width: 100%;
+  min-height: 49px;
+}
+
+.s-wrap-1{
+  float: left;
+  height: 100%;
+  width: 13%;
 }
 
 #app-logo{
-  float: left;
+  padding-left: 3%;
 }
 
 div.search-input{
-  position: absolute;
-  top: 20px;
-  left: 250px;
-  width: auto;
+  float: left;
+  height: 100%;
+  width: 20%;
+  padding-top: 1em;
 }
 
-.notes-search{
-  width: 230px
+
+input.notes-search {
+  width: 90%;
+  margin: 0 auto;
+  text-indent: 8px;
+  height: 2.25em;
+  border: 1px solid #B3B3B3;
+  border-radius: 5px;
 }
 
 .new-note {
-  position: absolute;
-  top: 25px;
-  left: 640px;
-  width: auto;
+  width: 67%;
+  float: left;
+  padding-top: 1em;
 }
-
-
+.new-note button {
+  background: #348AC7;
+  color: #ffffff;
+  margin-left: 1em;
+  width: 10em;
+  height: 2.5em;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
 /*Content Wrapper*/
 
@@ -188,5 +282,10 @@ div.search-input{
     left: 0;
     right: 0;
     height: 100%;
+    width: 100%;
     overflow: hidden;
+}
+
+#save-status{
+  display: inline;
 }

@@ -9,7 +9,7 @@
       <ul class="options-dropdown hidden">
         <% notebooks && notebooks.each(function(notebook) { %>
       <li data-notebook-id="<%= notebook.escape("id") %>">
-        <%= (note && (notebook === note.notebook)) ? "class='selected'" : "" %>>
+        <%= (note && (notebook === note.notebook())) ? "class='selected'" : "" %>>
         <form class="update-notebook">
           <input type="hidden" name="note[notebook_id]" value="<%= notebook.escape("id") %>">
           <div class="submit">
@@ -24,11 +24,7 @@
     </ul>
   </div>
 </div>
-<div style="float:left">
-  <i class="fa fa-floppy-o"></i>
-  &nbsp;&nbsp;&nbsp;
-</div>
-<div id="save-status" style="float:left">&nbsp;</div>
+<i class="fa fa-floppy-o" style="padding-top: .55em;"><div id="save-status" style="float:left">Relax, your notes save automatically || &nbsp;</div>&nbsp;&nbsp;&nbsp;</i>
 <div class="note-show-header-right top dropdown-parent">
   <div class="info-text">
     INFO&nbsp;

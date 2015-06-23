@@ -5,6 +5,7 @@ Feathernote.Views.NoteShow = Backbone.View.extend({
   events: {
     "blur form.note-title, form.note-body": "updateNote",
     "save form.note-title, form.note-body": "updateNote",
+    "submit form.note-title, form.note-body": "updateNote",
     "keyup form.note-title, form.note-body": "handleInput"
   },
 
@@ -14,7 +15,7 @@ Feathernote.Views.NoteShow = Backbone.View.extend({
 
   handleInput: function(event) {
     this.debounced = this.debounced || _.debounce(this.saveNote, 500);
-    $('#save-status').text('Saving...');
+    $('#save-status').text('Saving... || .');
     this.debounced(event);
   },
 
@@ -30,14 +31,20 @@ Feathernote.Views.NoteShow = Backbone.View.extend({
       tinyMCE.init({
         forced_root_block: "",
         menubar: false,
+        height: 260,
         selector: '#note-body',
         plugins: ["textcolor colorpicker preview print wordcount link image"],
         toolbar: "preview print | undo redo | fontselect fontsizeselect | forecolor backcolor | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
         setup: function (editor) {
                 editor.on('keyup',
                   function (event) {
-                    var content =
-                    tinyMCE.activeEditor.getContent();
+                    var content = tinyMCE.activeEditor.getContent();
+                    $("#note-body").html(content);
+                    $("#note-body").trigger("keyup");
+                  });
+                editor.on("blur",
+                  function(event){
+                    var content = tinyMCE.activeEditor.getContent();
                     $("#note-body").html(content);
                     $("#note-body").trigger("keyup");
                   });
@@ -47,28 +54,22 @@ Feathernote.Views.NoteShow = Backbone.View.extend({
     return this;
   },
 
-  setAttributes: function(event){
-    var attr = $(event.currentTarget).serializeJSON();
-    this.model.set(attr);
-  },
-
   saveNote: function (event) {
-    console.log("saving");
-    this.setAttributes(event);
-    this.model.save({}, {
+    console.log("through saveNote");
+    // this.setAttributes(event);
+    var attrs = $(event.currentTarget).serializeJSON();
+    this.model.save(attrs, {
       success: function() {
-        $("#save-status").text("All changes saved to Feathernote");
+        $("#save-status").text("All changes saved to Feathernote || .");
       },
     });
   },
 
   updateNote: function(event){
     event.preventDefault();
-    console.log('update');
+    console.log('through updateNote');
     var attr = $(event.currentTarget).serializeJSON();
-    this.model.save(attr, {
-      wait: true
-    });
+    this.model.save(attr);
   }
 
 });

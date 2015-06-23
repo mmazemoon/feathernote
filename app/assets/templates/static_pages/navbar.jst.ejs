@@ -1,10 +1,16 @@
-<div class="navbar-content">
-  <i class="fa fa-user"></i>
-  Welcome <%= currentUser %>
-  <i class="fa fa-caret-down"></i>
-  <form id="log-out" action="/session" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input type="hidden" name="authenticity_token" value="<%= $("meta[name='csrf-token']").attr("content") %>">
-    <button><i class="fa fa-sign-out"></i>Sign Out</button>
-  </form>
-</div>
+
+<ul>
+  <li>&nbsp;&nbsp;
+    <i class="fa fa-user">&nbsp;Welcome <%= currentUser %>&nbsp;&nbsp;</i>
+    <i class="fa fa-caret-down"></i>&nbsp;&nbsp;&nbsp;
+    <ul>
+      <li>
+        <form id="log-out" action="/session" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input type="hidden" name="authenticity_token" value="<%= $("meta[name='csrf-token']").attr("content") %>">
+          <i class="fa fa-sign-out">&nbsp;Sign Out</i>
+        </form>
+      </li>
+    </ul>
+  </li>
+</ul>

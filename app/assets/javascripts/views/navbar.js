@@ -2,14 +2,18 @@ Feathernote.Views.Navbar = Backbone.View.extend({
 
   template: JST['static_pages/navbar'],
 
-  className: "abcd",
+  className: "bb-navbar",
 
   events: {
-    "submit form" : "logOut"
-  },
+    "click .fa-sign-out": "logOut"
+    },
 
   initialize: function (){
     this.currentUser = Feathernote.currentUser;
+  },
+
+  logOut: function(){
+    $("#log-out").submit();
   },
 
   render: function(){

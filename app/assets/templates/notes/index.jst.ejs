@@ -1,4 +1,7 @@
 <section class="notes-list-content">
+  <div class="current-notebook-name" style="text-indent: .7em; border-bottom: 1px solid #b3b3b3; font-family:cursive">
+    <%= all ? "All Notes" : Feathernote.activeNotebook.get("name") %>
+  </div>
   <ul class="note-preview">
     <% notes.each(function(note){ %>
       <section class="preview-note-link">

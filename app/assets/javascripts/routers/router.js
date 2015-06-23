@@ -16,12 +16,13 @@ Feathernote.Routers.Router = Backbone.Router.extend({
   },
 
   allShow: function (id) {
+    console.log("allShow route")
   Feathernote.notes.fetch({
       success: function(collection){
         if(collection.first()){
           var noteId = id ? id : collection.first().id;
           this._hasNotesList = new Feathernote.Views.NotesIndex({
-          collection: collection,
+          collection: Feathernote.notes,
           all: true,
           id: noteId });
           this._swapListView(this._hasNotesList);
@@ -35,9 +36,9 @@ Feathernote.Routers.Router = Backbone.Router.extend({
     var notebook = Feathernote.notebooks.getOrFetch(id,
       function(model){
         Feathernote.activeNotebook = model;
-        var notes = model.notes();
+        var notes = Feathernote.activeNotebook.notes();
         this._hasNotesList = new Feathernote.Views.NotesIndex({
-          collection: notes,
+          collection: Feathernote.activeNotebook.notes(),
           id: notes.first().id });
           this.noteShow(notes.first().id);
           this._swapListView(this._hasNotesList);
@@ -46,13 +47,15 @@ Feathernote.Routers.Router = Backbone.Router.extend({
   },
 
   noteShow: function(id){
+    console.log("noteShow route");
     var note = Feathernote.notes.getOrFetch(id,
       function(model){
         Feathernote.activeNote = model;
-        var noteShow = new Feathernote.Views.NoteShow({ model: model});
+        Feathernote.activeNotebook = Feathernote.activeNote.notebook();
+        var noteShow = new Feathernote.Views.NoteShow({ model: Feathernote.activeNote});
         this._swapShowView(noteShow);
         if(!this._hasNotesList){
-          this.siblingNotes(note.notebook().id);
+          this.siblingNotes(Feathernote.activeNotebook.id);
         }
       }.bind(this));
   },
@@ -73,10 +76,12 @@ Feathernote.Routers.Router = Backbone.Router.extend({
   },
 
   siblingNotes: function(notebookId){
+    console.log("siblingNotes route");
     var notebook = Feathernote.notebooks.getOrFetch(
       notebookId,
       function(model, response, options){
-        var notes = notebook.notes();
+        Feathernote.activeNotebook = model;
+        var notes = Feathernote.activeNotebook.notes();
         this._hasNotesList = new Feathernote.Views.NotesIndex({
           collection: notes
         });
@@ -86,6 +91,7 @@ Feathernote.Routers.Router = Backbone.Router.extend({
   },
 
 _swapShowView: function(view) {
+  console.log("swapShow helper");
   this._currentShowView && this._currentShowView.remove();
   this._currentShowView = view;
   this.$noteShow.html(view.$el);
@@ -93,6 +99,7 @@ _swapShowView: function(view) {
   },
 
 _swapListView: function(view) {
+  console.log("swapList helper");
   this._currentListView && this._currentListView.remove();
   this._currentListView = view;
   this.$notesList.html(view.$el);

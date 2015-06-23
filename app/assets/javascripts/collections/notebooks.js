@@ -11,7 +11,7 @@ Feathernote.Collections.Notebooks = Backbone.Collection.extend({
           if(callback){
             callback(model, response, options);
           }
-        }
+        }, reset: true
       });
     } else {
       notebook = new Feathernote.Models.Notebook({id: id});
@@ -21,7 +21,7 @@ Feathernote.Collections.Notebooks = Backbone.Collection.extend({
           if(callback){
             callback(model, response, options);
           }
-        }
+        }, reset: true
       });
     }
     return notebook;

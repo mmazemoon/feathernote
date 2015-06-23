@@ -7,10 +7,20 @@ Feathernote.Views.NotesIndex = Backbone.View.extend({
   initialize: function(options){
     this.all = options.all || false;
     this.id = options.id || null;
-    this.listenTo(this.collection, "add remove sync change", this.render);
+    this.listenTo(this.collection, "add remove change", this.render);
   },
 
+  // refresh: function(){
+  //   this.collection.fetch({ success:
+  //     function(refreshedCollection, response, options){
+  //       this.collection = refreshedCollection;
+  //       this.render();
+  //     }.bind(this)
+  //   });
+  // },
+
   render: function (){
+    console.log("rendering NotesIndex view");
 
     var content;
     var fragment = "notes/";
