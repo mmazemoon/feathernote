@@ -55,7 +55,6 @@ Feathernote.Views.NoteShow = Backbone.View.extend({
   },
 
   saveNote: function (event) {
-    console.log("through saveNote");
     // this.setAttributes(event);
     var attrs = $(event.currentTarget).serializeJSON();
     this.model.save(attrs, {
@@ -67,7 +66,6 @@ Feathernote.Views.NoteShow = Backbone.View.extend({
 
   updateNote: function(event){
     event.preventDefault();
-    console.log('through updateNote');
     var attr = $(event.currentTarget).serializeJSON();
     this.model.save(attr);
   }

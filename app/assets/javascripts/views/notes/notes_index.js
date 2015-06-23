@@ -20,7 +20,6 @@ Feathernote.Views.NotesIndex = Backbone.View.extend({
   // },
 
   render: function (){
-    console.log("rendering NotesIndex view");
 
     var content;
     var fragment = "notes/";
