@@ -1,6 +1,35 @@
-<ul>
-  <li class="all-notes-sidebar"><a href="#/notes/all"><i class="fa fa-file-text">&nbsp;All Notes</i></a></li>
-    <% notebooks.each(function(notebook){ %>
-  <li class="notebook-name-sidebar"><a href="#/notebooks/<%= notebook.id %>"><i class="fa fa-book">&nbsp;<%= notebook.escape("name") %></i></a></li>
-    <%  })  %>
-</ul>
+
+<ul class="sidebar-list">
+  <li class="group">
+    <div class="sidebar-entry-left">
+      <a href="#/notes/all" class="group">
+        <i class="fa fa-file-text"></i>&nbsp;
+    All Notes (<%= Feathernote.notes.length %>)
+      </a>
+    </div>
+  </li>
+<% notebooks.each(function(notebook) { %>
+  <li class="group">
+    <div class="sidebar-entry-left">
+      <a href="#/notebooks/<%= notebook.id %>">
+        <i class='fa fa-book fa-lg'></i>&nbsp;<%= notebook.escape("name") %> (<%= notebook.notes.length %>)
+      </a>
+    </div>
+    <div class="sidebar-entry-right">
+        <i class='fa fa-toggle-down'></i>
+          <ul class="options-dropdown">
+            <li>
+              <a href="#" class="edit-notebook" id="<%= notebook.id %>">
+                Rename...
+              </a>
+            </li>
+            <li>
+              <a href="#" class="delete-notebook" id="<%= notebook.id %>">
+                Delete Notebook
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    <% }) %>
+  </ul>

@@ -1,23 +1,48 @@
 <section class="notes-list-content">
-  <div class="current-notebook-name" style="text-indent: .7em; border-bottom: 1px solid #b3b3b3; font-family:cursive">
-    <%= all ? "All Notes" : Feathernote.activeNotebook.get("name") %>
+
+  <div class="current-notebook-name" >
+    <%= all ? "All Notes" : Feathernote.activeNotebook.escape("name") %>
   </div>
+
   <ul class="note-preview">
-    <% notes.each(function(note){ %>
-      <section class="preview-note-link">
-        <% if(all){ %>
-          <a href="#/notes/all/<%= note.id %>"><span class="link-spanner"></span></a>
-        <% } else { %>
-          <a href="#/notes/<%= note.id %>"><span class="link-spanner"></a>
-      <% } %>
+    <% notes.each( function (note) { %>
       <li>
-        <% var title = note.escape("title") %>
-        <div id="preview-note-title"><%= $("<p>").html(title).text() %></div>
-        <% var body = note.escape("body") %>
-        <div id="preview-note-body"><%= $("<p>").html(body).text()
- %></div>
+        <section class="preview-note-link">
+
+          <% if (all) { %>
+            <a href="#/notes/all/<%= note.id %>" class="link-spanner">
+              <article class="note-preview">
+              <% var title = note.escape("title") %>
+              <div class="preview-note-title"><%= $("<p>").html(title).text() %></div>
+              <% var body = note.escape("body") %>
+              <div class="preview-note-body">
+                <span class="note-preview-time">
+                  <%= moment(note.get("created_at")).fromNow() %>
+                </span>
+                <%= $("<p>").html(body).text() %>
+              </div>
+              </article>
+            </a>
+
+          <% } else { %>
+          <a href="#/notes/<%= note.id %>" class="link-spanner">
+            <article class="note-preview">
+              <% var title = note.escape("title") %>
+              <div class="preview-note-title"><%= $("<p>").html(title).text() %></div>
+              <% var body = note.escape("body") %>
+              <div class="preview-note-body">
+                <span class="note-preview-time">
+                  <%= moment(note.get("created_at")).fromNow() %>
+                </span>
+                <%= $("<p>").html(body).text() %>
+              </div>
+            </article>
+          </a>
+          <% } %>
+
+        </section>
       </li>
-    </section>
     <% }) %>
   </ul>
+
 </section>

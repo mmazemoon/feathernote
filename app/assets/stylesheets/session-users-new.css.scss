@@ -1,5 +1,18 @@
 /* New Session and Users */
 
+.top-border {
+  width: 100%;
+  background-color: #3B5999;
+  height: .5em;
+  border-bottom: 1px solid #fff;
+}
+
+#welcome-logo {
+  width: 80%;
+  display: block;
+  margin: auto;
+}
+
 section.animate-wrapper {
   color: #fff;
   margin: 0 auto;
@@ -120,8 +133,8 @@ section.animate-wrapper {
     border-bottom-right-radius: 10px;
   }
 
-  a#create-new-account {
-    padding-top: 14px;
+  a#session-users-new {
+    padding-top: 4px;
     font-size: small;
     color: #fafafa;
     float: right;
@@ -132,10 +145,4 @@ section.animate-wrapper {
     transform: perspective(1000px) rotateY(0deg);
     background-color: #2b53a9;
   }
-}
-
-a#create-new-account {
-  position: relative;
-  display: block;
-  text-align: center;
 }

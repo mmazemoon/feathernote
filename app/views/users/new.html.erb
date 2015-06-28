@@ -1,3 +1,13 @@
+<style>
+  body {
+    background-color: #f3f3f3;
+    background-position: 15px 0px, 0px 0px;
+    background-image: radial-gradient(#c0c0c0 5%, transparent 6%);
+    background-image: -webkit-radial-gradient(#c0c0c0 5%, transparent 6%);
+    background-size: 35px 35px;
+  }
+</style>
+
 <div class="top-border"></div>
 <img id="welcome-logo" src="<%= image_path('feathernote-welcome-logo.png') %>" />
 
@@ -13,7 +23,7 @@
       <label>Create a Password</label>
       <input name="user[password]" placeholder='Password' type='password'>
       <input type="submit" class='js-toggle-login login--login-submit' value="Create Account">
-      <a id="create-new-account" href="/session/new">Already have an account? Sign in</a>
+      <a id="session-users-new" href="/session/new">Already have an account? Sign in</a>
     </div>
   </form>
   <div class='login--toggle-container'>
@@ -27,6 +37,7 @@
 
 <script type="text/javascript">
 (function () {
+  if($("section").is(".animate-wrapper")){
   $(function () {
       $('.login--container').removeClass('preload');
       this.timer = window.setTimeout(function (_this) {
@@ -42,5 +53,6 @@
           };
       }(this));
   });
+}
 }.call(this));
 </script>

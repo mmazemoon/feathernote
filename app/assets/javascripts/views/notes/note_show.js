@@ -31,7 +31,6 @@ Feathernote.Views.NoteShow = Backbone.View.extend({
       tinyMCE.init({
         forced_root_block: "",
         menubar: false,
-        height: 260,
         selector: '#note-body',
         plugins: ["textcolor colorpicker preview print wordcount link image"],
         toolbar: "preview print | undo redo | fontselect fontsizeselect | forecolor backcolor | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",

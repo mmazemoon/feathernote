@@ -11,9 +11,17 @@ Feathernote.Views.NotesIndex = Backbone.View.extend({
   },
 
   // refresh: function(){
+  //   if (all){
+  //     return this.render();
+  //   }
   //   this.collection.fetch({ success:
   //     function(refreshedCollection, response, options){
-  //       this.collection = refreshedCollection;
+  //       var notes = refreshedCollection.filter(function(model){
+  //         if(model.notebook().id === Feathernote.activeNotebook.id){
+  //           return true;
+  //         }
+  //       });
+  //       this.collection = new Feathernote.Collections.Notes(notes);
   //       this.render();
   //     }.bind(this)
   //   });

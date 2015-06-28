@@ -1,45 +1,58 @@
-<div class="top-border"></div>
-<img id="welcome-logo" src="<%= image_path('feathernote-welcome-logo.png') %>" />
+  <style>
+    body {
+      background-color: #f3f3f3;
+      background-position: 15px 0px, 0px 0px;
+      background-image: radial-gradient(#c0c0c0 5%, transparent 6%);
+      background-image: -webkit-radial-gradient(#c0c0c0 5%, transparent 6%);
+      background-size: 35px 35px;
+    }
+  </style>
 
-<section class="animate-wrapper">
-<div class='preload login--container'>
-  <form class='login--form' action="<%= session_url %>" method="post">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <div class='login--username-container'>
-      <label>Email address</label>
-      <input autofocus placeholder='Email address' type='text' name="user[email]" >
+  <div class="top-border"></div>
+  <img id="welcome-logo" src="<%= image_path('feathernote-welcome-logo.png') %>" />
+
+  <section class="animate-wrapper">
+  <div class='preload login--container'>
+    <form class='login--form' action="<%= session_url %>" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <div class='login--username-container'>
+        <label>Email address</label>
+        <input autofocus placeholder='Email address' type='text' name="user[email]" >
+      </div>
+      <div class='login--password-container'>
+        <label>Password</label>
+        <input name="user[password]" placeholder='Password' type='password'>
+        <input type="submit" class='js-toggle-login login--login-submit' value="Sign in">
+        <a id="session-users-new" href="/users/new">Don't have an account? Create one</a>
+      </div>
+    </form>
+    <div class='login--toggle-container'>
+      <small>Hello,&nbsp;</small>
+      <div class='js-toggle-login'>Sign in</div>
+      <!-- <small>here</small> -->
     </div>
-    <div class='login--password-container'>
-      <label>Password</label>
-      <input name="user[password]" placeholder='Password' type='password'>
-      <input type="submit" class='js-toggle-login login--login-submit' value="Sign in">
-      <a id="create-new-account" href="/users/new">Don't have an account? Create one</a>
-    </div>
-  </form>
-  <div class='login--toggle-container'>
-    <small>Hello,&nbsp;</small>
-    <div class='js-toggle-login'>Sign in</div>
-    <!-- <small>here</small> -->
   </div>
-</div>
-</section>
+  </section>
+
 <img src="http://www.auplod.com/u/ludpao59783.png" id="coming-soon" style="position: absolute; right: 10%; top: 10%;" />
 <script type="text/javascript">
-(function () {
-  $(function () {
-      $('.login--container').removeClass('preload');
-      this.timer = window.setTimeout(function (_this) {
-          return function () {
-              return $('.login--container').toggleClass('login--active');
-          };
-      }(this), 2000);
-      return $('.js-toggle-login').click(function (_this) {
-          return function () {
-              window.clearTimeout(_this.timer);
-              $('.login--container').toggleClass('login--active');
-              return $('.login--username-container input').focus();
-          };
-      }(this));
-  });
-}.call(this));
+  (function () {
+    if($("section").is(".animate-wrapper")){
+      $(function () {
+          $('.login--container').removeClass('preload');
+          this.timer = window.setTimeout(function (_this) {
+              return function () {
+                  return $('.login--container').toggleClass('login--active');
+              };
+          }(this), 2000);
+          return $('.js-toggle-login').click(function (_this) {
+              return function () {
+                  window.clearTimeout(_this.timer);
+                  $('.login--container').toggleClass('login--active');
+                  return $('.login--username-container input').focus();
+              };
+          }(this));
+      });
+    }
+  }.call(this));
 </script>

@@ -34,18 +34,28 @@ Feathernote.Routers.Router = Backbone.Router.extend({
   notebookShow: function(id) {
     var notebook = Feathernote.notebooks.getOrFetch(id,
       function(model){
+
         Feathernote.activeNotebook = model;
         var notes = Feathernote.activeNotebook.notes();
+
+        Feathernote.activeNote = notes.first();
+
         this._hasNotesList = new Feathernote.Views.NotesIndex({
           collection: Feathernote.activeNotebook.notes(),
-          id: notes.first().id });
-          this.noteShow(notes.first().id);
+          id: Feathernote.activeNote.id });
+          this.noteShow(notes.first().id, Feathernote.activeNotebook);
           this._swapListView(this._hasNotesList);
       }.bind(this)
     );
   },
 
-  noteShow: function(id){
+  noteShow: function(id, notebook){
+    // if(notebook){
+    //   var noteShow = new Feathernote.Views.NoteShow({ model: notebook.notes().first });
+    //   this._swapShowView(noteShow);
+    //   return;
+    // }
+
     var note = Feathernote.notes.getOrFetch(id,
       function(model){
         Feathernote.activeNote = model;
@@ -92,7 +102,7 @@ _swapShowView: function(view) {
   this._currentShowView = view;
   this.$noteShow.html(view.$el);
   view.render();
-  },
+},
 
 _swapListView: function(view) {
   this._currentListView && this._currentListView.remove();

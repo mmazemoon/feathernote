@@ -12,7 +12,7 @@ window.Feathernote = {
       success: function(){Feathernote.activeNotebook = Feathernote.notebooks.first();}.bind(this)
     });
 
-    new Feathernote.Routers.Router( {$rootEl: $(".content")} );
+    new Feathernote.Routers.Router( {$rootEl: $("#maincontainer")} );
 
     var $navbar = $("#navbar");
     var $searchbar = $("#searchbar");

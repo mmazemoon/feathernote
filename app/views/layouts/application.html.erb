@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Feathernote Web</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-  <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvostfv/AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA/76LLX4AAAAAvostfv/AAP//wAD//8AA///AAP//wAD//8AA///AAP8AAAD//8AA/wAAAP//wAD//8AA///AAP//wAD/vostfv/AAP//wAD//8AA///AAP//wAD//8AA///AAP8AAAD/AAAA/wAAAP8AAAD/hISE///AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD/AAAA/wAAAP8AAAD/hISE/wAAAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD/AAAA/wAAAP8AAAD/AAAA/4SEhP8AAAD/AAAA///AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA/wAAAP8AAAD/AAAA/wAAAP+EhIT/AAAA/wAAAP8AAAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD/AAAA/wAAAP8AAAD/7u7u/wAAAP8AAAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA/wAAAP///////////wAAAP/////////////AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP8AAAD/hISE/wAAAP//////AAAA////////wAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA////////////AAAA/////////////8AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP8AAAD/AAAA/wAAAP8AAAD/AAAA///AAP//wAD//8AA///AAP//wAD//8AA/76LLX7/wAD//8AA///AAP8AAAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA/76LLbIAAAAAvostfv/AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA/76LLbIAAAAAwAMAAIABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAwAEAAA==" rel="icon" type="image/x-icon" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feathernote Web</title>
+<%= stylesheet_link_tag    'application', media: 'all' %>
+<%= javascript_include_tag 'application' %>
+<%= csrf_meta_tags %>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvostfv/AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA/76LLX4AAAAAvostfv/AAP//wAD//8AA///AAP//wAD//8AA///AAP8AAAD//8AA/wAAAP//wAD//8AA///AAP//wAD/vostfv/AAP//wAD//8AA///AAP//wAD//8AA///AAP8AAAD/AAAA/wAAAP8AAAD/hISE///AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD/AAAA/wAAAP8AAAD/hISE/wAAAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD/AAAA/wAAAP8AAAD/AAAA/4SEhP8AAAD/AAAA///AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA/wAAAP8AAAD/AAAA/wAAAP+EhIT/AAAA/wAAAP8AAAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD/AAAA/wAAAP8AAAD/7u7u/wAAAP8AAAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA/wAAAP///////////wAAAP/////////////AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP8AAAD/hISE/wAAAP//////AAAA////////wAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA////////////AAAA/////////////8AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP8AAAD/AAAA/wAAAP8AAAD/AAAA///AAP//wAD//8AA///AAP//wAD//8AA/76LLX7/wAD//8AA///AAP8AAAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA/76LLbIAAAAAvostfv/AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAD//8AA/76LLbIAAAAAwAMAAIABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAwAEAAA==" rel="icon" type="image/x-icon">
 </head>
+
 <body>
-   <%= yield %>
+  <%= yield %>
+
 </body>
 </html>
