@@ -38,29 +38,27 @@ Feathernote.Routers.Router = Backbone.Router.extend({
         Feathernote.activeNotebook = model;
         var notes = Feathernote.activeNotebook.notes();
 
-        Feathernote.activeNote = notes.first();
+        // Feathernote.notes.set(notebook.notes())
+        // Feathernote.activeNote = notes.first();
 
         this._hasNotesList = new Feathernote.Views.NotesIndex({
           collection: Feathernote.activeNotebook.notes(),
-          id: Feathernote.activeNote.id });
-          this.noteShow(notes.first().id, Feathernote.activeNotebook);
+          id: notes.first().id });
+          this.noteShow(notes.first().id, true);
           this._swapListView(this._hasNotesList);
       }.bind(this)
     );
   },
 
-  noteShow: function(id, notebook){
-    // if(notebook){
-    //   var noteShow = new Feathernote.Views.NoteShow({ model: notebook.notes().first });
-    //   this._swapShowView(noteShow);
-    //   return;
-    // }
+  noteShow: function(id, active){
 
-    var note = Feathernote.notes.getOrFetch(id,
+    var collection = active ? Feathernote.activeNotebook.notes() : Feathernote.notes;
+
+    var note = collection.getOrFetch(id,
       function(model){
-        Feathernote.activeNote = model;
-        Feathernote.activeNotebook = Feathernote.activeNote.notebook();
-        var noteShow = new Feathernote.Views.NoteShow({ model: Feathernote.activeNote});
+        // Feathernote.activeNote = model;
+        Feathernote.activeNotebook = model.notebook();
+        var noteShow = new Feathernote.Views.NoteShow({ model: model});
         this._swapShowView(noteShow);
         if(!this._hasNotesList){
           this.siblingNotes(Feathernote.activeNotebook.id);

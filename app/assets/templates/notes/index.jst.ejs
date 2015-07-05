@@ -1,21 +1,24 @@
 <section class="notes-list-content">
 
-  <div class="current-notebook-name" >
+  <div class="current-notebook-name notes-list-header" >
+    <i class="fa fa-book"></i>
     <%= all ? "All Notes" : Feathernote.activeNotebook.escape("name") %>
   </div>
 
-  <ul class="note-preview">
+  <ul>
     <% notes.each( function (note) { %>
       <li>
-        <section class="preview-note-link">
+        <% if (note.escape("title").replace(/ /g, '').length === 0) { %>
+          <% note.set("title", "Untitled") %>
+          <% } %>
 
           <% if (all) { %>
             <a href="#/notes/all/<%= note.id %>" class="link-spanner">
               <article class="note-preview">
               <% var title = note.escape("title") %>
-              <div class="preview-note-title"><%= $("<p>").html(title).text() %></div>
+              <div class="preview-note-title note-preview-title"><%= $("<p>").html(title).text() %></div>
               <% var body = note.escape("body") %>
-              <div class="preview-note-body">
+              <div class="preview-note-body note-preview-body">
                 <span class="note-preview-time">
                   <%= moment(note.get("created_at")).fromNow() %>
                 </span>
@@ -28,9 +31,9 @@
           <a href="#/notes/<%= note.id %>" class="link-spanner">
             <article class="note-preview">
               <% var title = note.escape("title") %>
-              <div class="preview-note-title"><%= $("<p>").html(title).text() %></div>
+              <div class="preview-note-title note-preview-title"><%= $("<p>").html(title).text() %></div>
               <% var body = note.escape("body") %>
-              <div class="preview-note-body">
+              <div class="preview-note-body note-preview-body">
                 <span class="note-preview-time">
                   <%= moment(note.get("created_at")).fromNow() %>
                 </span>
@@ -40,7 +43,6 @@
           </a>
           <% } %>
 
-        </section>
       </li>
     <% }) %>
   </ul>

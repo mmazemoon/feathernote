@@ -15,7 +15,7 @@ Feathernote.Views.NoteShow = Backbone.View.extend({
 
   handleInput: function(event) {
     this.debounced = this.debounced || _.debounce(this.saveNote, 500);
-    $('#save-status').text('Saving... || .');
+    $('#save-status').text('Saving... ');
     this.debounced(event);
   },
 
@@ -33,7 +33,7 @@ Feathernote.Views.NoteShow = Backbone.View.extend({
         menubar: false,
         selector: '#note-body',
         plugins: ["textcolor colorpicker preview print wordcount link image"],
-        toolbar: "preview print | undo redo | fontselect fontsizeselect | forecolor backcolor | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+        toolbar: "preview print | undo redo | fontsizeselect forecolor backcolor | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
         setup: function (editor) {
                 editor.on('keyup',
                   function (event) {
@@ -54,11 +54,10 @@ Feathernote.Views.NoteShow = Backbone.View.extend({
   },
 
   saveNote: function (event) {
-    // this.setAttributes(event);
     var attrs = $(event.currentTarget).serializeJSON();
     this.model.save(attrs, {
       success: function() {
-        $("#save-status").text("All changes saved to Feathernote || .");
+        $("#save-status").text("All changes saved to Feathernote");
       },
     });
   },

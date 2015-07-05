@@ -1,16 +1,35 @@
+<article class="sidebar-item">
+  <div class="sidebar-header group">
+    <div class="sidebar-header-left">
+      <i class="fa fa-caret-down"></i>&nbsp;
+      Notebooks
+    </div>
+    <div class="sidebar-header-right dropdown-parent">
+      <i class="fa fa-toggle-down dropdown"></i>
+      <ul class="options-dropdown hidden">
+        <li>
+          <div class="show-modal"
+              data-action="create-notebook"
+              data-item-id="nil">
+            New Notebook...
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
 
 <ul class="sidebar-list">
-  <li class="group">
-    <div class="sidebar-entry-left">
+  <li class="group dropdown-parent">
+    <div class="sidebar-entry-left notebook">
       <a href="#/notes/all" class="group">
-        <i class="fa fa-file-text"></i>&nbsp;
+        <i class="fa fa-file-text fa-lg"></i>&nbsp;
     All Notes (<%= Feathernote.notes.length %>)
       </a>
     </div>
   </li>
 <% notebooks.each(function(notebook) { %>
-  <li class="group">
-    <div class="sidebar-entry-left">
+  <li class="group dropdown-parent">
+    <div class="sidebar-entry-left notebook">
       <a href="#/notebooks/<%= notebook.id %>">
         <i class='fa fa-book fa-lg'></i>&nbsp;<%= notebook.escape("name") %> (<%= notebook.notes.length %>)
       </a>

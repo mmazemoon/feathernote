@@ -13,6 +13,8 @@ gem 'newrelic_rpm'
 gem 'backbone-on-rails'
 gem 'font-awesome-rails'
 gem 'tinymce-rails'
+gem "non-stupid-digest-assets"
+
 
 group :development, :test do
   gem 'byebug'

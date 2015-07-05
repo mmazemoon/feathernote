@@ -9,7 +9,7 @@ window.Feathernote = {
       success: function(){ Feathernote.activeNote = Feathernote.notes.first();}.bind(this)
     });
     Feathernote.notebooks = new Feathernote.Collections.Notebooks({
-      success: function(){Feathernote.activeNotebook = Feathernote.notebooks.first();}.bind(this)
+      // success: function(){Feathernote.activeNotebook = Feathernote.notebooks.first();}.bind(this)
     });
 
     new Feathernote.Routers.Router( {$rootEl: $("#maincontainer")} );

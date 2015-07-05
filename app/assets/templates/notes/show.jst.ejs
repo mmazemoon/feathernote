@@ -24,7 +24,9 @@
     </ul>
   </div>
 </div>
-<i class="fa fa-floppy-o"><div id="save-status">Relax, your notes save automatically || &nbsp;</div>&nbsp;&nbsp;&nbsp;</i>
+<div class="note-show-save-status">
+  <i class="fa fa-floppy-o"></i><div id="save-status">Relax, your notes save automatically</div>
+</div>
 <div class="note-show-header-right top dropdown-parent">
   <div class="info-text">
     INFO&nbsp;
@@ -51,10 +53,10 @@
 
 <section class="note-content">
   <form class="note-title">
-    <input type="text" name="note[title]"  id="note-title" value="<%= note && note.escape("title") %>">
+    <input type="text" name="note[title]" id="note-title" placeholder="Untitled" value="<%= note && note.escape("title")%>">
   </form>
   <form class="note-body">
     <textarea name="note[body]" id="note-body"><%= note && note.escape("body") %></textarea>
-    <input type="submit" name ="submitbtn">
+    <!-- <input type="submit" name ="submitbtn"> -->
   </form>
 </section>
