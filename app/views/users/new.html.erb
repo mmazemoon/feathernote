@@ -1,7 +1,7 @@
 <style>
   body {
-    background-color: #f3f3f3;
-    background-position: 15px 0px, 0px 0px;
+    background-color: #FDFDFD;
+    background-position: 10px 0px, 0px 0px;
     background-image: radial-gradient(#c0c0c0 5%, transparent 6%);
     background-image: -webkit-radial-gradient(#c0c0c0 5%, transparent 6%);
     background-size: 35px 35px;
@@ -9,7 +9,13 @@
 </style>
 
 <div class="top-border"></div>
-<img id="welcome-logo" src="<%= image_path('feathernote-welcome-logo.png') %>" />
+<img id="welcome-logo" src="<%= image_path('welcome-logo-feathernote.png') %>" />
+<div class="errors">
+  <% if flash[:errors] %>
+  <i class='fa fa-exclamation-circle'></i>
+    <%= flash[:errors].join("<br> <i class='fa fa-exclamation-circle'></i>&nbsp;").html_safe  %>
+  <% end %>
+</div>
 
 <section class="animate-wrapper">
 <div class='preload login--container'>
@@ -33,8 +39,10 @@
   </div>
 </div>
 </section>
-<img src="http://www.auplod.com/u/ludpao59783.png" id="coming-soon" style="position: absolute; right: 10%; top: 10%;" />
-
+<!-- <img src="http://www.auplod.com/u/ludpao59783.png" id="coming-soon" style="position: absolute; right: 10%; top: 10%;" /> -->
+<section class="animate-button">
+  <div class="round-button"><div class="round-button-circle"><a href="#" class="round-button">Demo the App</a></div></div>
+</section>
 <script type="text/javascript">
 (function () {
   if($("section").is(".animate-wrapper")){

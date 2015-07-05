@@ -49,6 +49,7 @@ section.animate-wrapper {
     border-radius: 2px;
     margin-bottom: 0.5em;
     color: #333;
+    font-size: 14px
   }
   input[type="text"]:focus, input[type="password"]:focus {
     outline: none;
@@ -93,7 +94,7 @@ section.animate-wrapper {
     right: 0;
     line-height: 2.5em;
     width: 50%;
-    height: 120px;
+    height: 130px;
     text-align: right;
     cursor: pointer;
     transform: perspective(1000px) translateZ(1px);
@@ -117,7 +118,7 @@ section.animate-wrapper {
     float: left;
     background-color: #2b53a9;
     width: 50%;
-    height: 120px;
+    height: 130px;
     padding: 0.5em;
   }
 
@@ -149,4 +150,41 @@ section.animate-wrapper {
     transform: perspective(1000px) rotateY(0deg);
     background-color: #2b53a9;
   }
+}
+
+section.animate-button {
+  float: right;
+  position: relative;
+  right: 10%;
+  .round-button {
+  	width:100%;
+  }
+  .round-button-circle {
+    width: 80%;
+    height: 0;
+    padding-bottom: 80%;
+    border-radius: 50%;
+    border: 10px solid #fff;
+    overflow: hidden;
+    background: #4679BD;
+    box-shadow: 0 0 10px black;
+  }
+  .round-button-circle:hover {
+  	background:#3B5999;
+  }
+  .round-button a {
+    display: block;
+    float: left;
+    width: 100%;
+    padding-top: 46%;
+    padding-bottom: 50%;
+    line-height: 1em;
+    margin-top: -0.5em;
+    text-align: center;
+    color: #FFF;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
 }

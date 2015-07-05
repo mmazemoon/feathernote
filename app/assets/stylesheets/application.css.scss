@@ -163,6 +163,18 @@ body{
 	height: 100%
 }
 
+.errors {
+		box-sizing: border-box;
+	  text-align: center;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 13px;
+		color: #D63301;
+	  width: 50%;
+	  margin: 0 auto;
+	  padding-bottom: 1%;
+	  border-radius: 3px;
+}
+
 /* ####### responsive layout CSS ####### */
 
 @media (max-width: 840px){ /* 1st level responsive layout break point- drop right column down*/
@@ -218,7 +230,7 @@ body{
 }
 
 .bb-navbar{
-  height: 100%;
+  height: 31px;
   width: 100%;
   padding: 0;
   margin: 0;
@@ -312,7 +324,7 @@ body{
 
 .s-wrap-1{
   float: left;
-  height: 100%;
+  height: 48px;
   width: 13%;
 }
 
@@ -322,7 +334,7 @@ body{
 
 div.search-input{
   float: left;
-  height: 100%;
+  height: 48px;
   width: 20%;
   padding-top: 1em;
 }
@@ -338,18 +350,82 @@ input.notes-search {
 }
 
 .new-note {
+	float: right;
+	box-sizing: border-box;
+	height: 48px;
   width: 67%;
-  float: left;
-  padding-top: 1em;
-}
-.new-note button {
-  background: #348AC7;
-  color: #ffffff;
-  margin-left: 1em;
-  width: 10em;
-  height: 2.5em;
-  border-radius: 5px;
-  cursor: pointer;
+	line-height: 56px;
+	padding-left: 3%;
+
+	.button
+	{
+		cursor: pointer;
+	  letter-spacing: 1px;
+	  text-align: center;
+	  color: #0C5;
+	  margin-left: 1em auto;
+	  top:0; right:0; bottom:0; left:0;
+
+	  padding: 0.5% 1.5%;
+		background: #348AC7;
+	  border: 1px solid #3B5999;
+	  color: #FFF;
+	  border-radius: 5px;
+	  overflow: hidden;
+
+	  transition: all 0.5s;
+	}
+
+	.button:hover, .button:active
+	{
+	  text-decoration: none;
+		color: #3B5999;
+	  border-color: #3B5999;
+	  background: #FFF;
+	}
+
+	.button span
+	{
+	  display: inline-block;
+	  position: relative;
+	  padding-right: 0;
+
+	  transition: padding-right 0.5s;
+	}
+
+	.button span:after
+	{
+	  content: ' ';
+	  position: absolute;
+	  top: 0;
+	  right: -18px;
+	  opacity: 0;
+	  width: 10px;
+	  height: 10px;
+	  margin-top: -10px;
+
+	  background: rgba(0, 0, 0, 0);
+	  border: 3px solid #FFF;
+	  border-top: none;
+	  border-right: none;
+
+	  transition: opacity 0.5s, top 0.5s, right 0.5s;
+	  transform: rotate(-45deg);
+	}
+
+	.button:hover span, .button:active span
+	{
+	  padding-right: 30px;
+	}
+
+	.button:hover span:after, .button:active span:after
+	{
+	  transition: opacity 0.5s, top 0.5s, right 0.5s;
+	  opacity: 1;
+	  border-color: #3B5999;
+	  right: 0;
+	  top: 50%;
+	}
 }
 
 /* Note Show */
