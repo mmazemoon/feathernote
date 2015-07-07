@@ -77,6 +77,12 @@ body{
 	font-family: 'Roboto', sans-serif;
 }
 
+.clearfix:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+
 .hidden {
   display: none;
 }
@@ -473,6 +479,10 @@ input.notes-search {
   padding-right: 12px;
 }
 
+.note-show-header-left {
+	float: left;
+}
+
 .note-show-header-left > .notebook-name {
   color: rgb(122, 125, 129);
   position: relative;
@@ -641,4 +651,19 @@ textarea#note-body,
   float: right;
   font-size: 12px;
   padding: 12px;
+}
+
+.hvr-fade {
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
 }

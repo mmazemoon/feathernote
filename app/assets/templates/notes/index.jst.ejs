@@ -2,7 +2,7 @@
 
   <div class="current-notebook-name notes-list-header" >
     <i class="fa fa-book"></i>
-    <%= all ? "All Notes" : Feathernote.activeNotebook.escape("name") %>
+    <%= all ? "All Notes" : notebook.escape("name") %>
   </div>
 
   <ul>
@@ -14,7 +14,7 @@
 
           <% if (all) { %>
             <a href="#/notes/all/<%= note.id %>" class="link-spanner">
-              <article class="note-preview">
+              <article class="note-preview hvr-fade">
               <% var title = note.escape("title") %>
               <div class="preview-note-title note-preview-title"><%= $("<p>").html(title).text() %></div>
               <% var body = note.escape("body") %>
@@ -29,7 +29,7 @@
 
           <% } else { %>
           <a href="#/notes/<%= note.id %>" class="link-spanner">
-            <article class="note-preview">
+            <article class="note-preview hvr-fade">
               <% var title = note.escape("title") %>
               <div class="preview-note-title note-preview-title"><%= $("<p>").html(title).text() %></div>
               <% var body = note.escape("body") %>

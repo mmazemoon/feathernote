@@ -6,7 +6,7 @@ window.Feathernote = {
   initialize: function(options) {
     Feathernote.currentUser = options.currentUser;
     Feathernote.notes = new Feathernote.Collections.Notes({
-      success: function(){ Feathernote.activeNote = Feathernote.notes.first();}.bind(this)
+      // success: function(){ Feathernote.activeNote = Feathernote.notes.first();}.bind(this)
     });
     Feathernote.notebooks = new Feathernote.Collections.Notebooks({
       // success: function(){Feathernote.activeNotebook = Feathernote.notebooks.first();}.bind(this)

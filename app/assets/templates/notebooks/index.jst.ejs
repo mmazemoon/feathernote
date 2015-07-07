@@ -22,7 +22,7 @@
   <li class="group dropdown-parent">
     <div class="sidebar-entry-left notebook">
       <a href="#/notes/all" class="group">
-        <i class="fa fa-file-text fa-lg"></i>&nbsp;
+        <i class="fa fa-book fa-lg"></i>&nbsp;
     All Notes (<%= Feathernote.notes.length %>)
       </a>
     </div>
@@ -31,7 +31,7 @@
   <li class="group dropdown-parent">
     <div class="sidebar-entry-left notebook">
       <a href="#/notebooks/<%= notebook.id %>">
-        <i class='fa fa-book fa-lg'></i>&nbsp;<%= notebook.escape("name") %> (<%= notebook.notes.length %>)
+        <i class='fa fa-book fa-lg'></i>&nbsp;<%= notebook.escape("name") %> (<%= notebook.notes().length %>)
       </a>
     </div>
     <div class="sidebar-entry-right">

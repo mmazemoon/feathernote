@@ -6,12 +6,18 @@ Feathernote.Views.NoteShow = Backbone.View.extend({
     "blur form.note-title, form.note-body": "updateNote",
     "save form.note-title, form.note-body": "updateNote",
     "submit form.note-title, form.note-body": "updateNote",
-    "keyup form.note-title, form.note-body": "handleInput"
-  },
+    "keyup form.note-title, form.note-body": "handleInput",
+    "click .delete-note": "deleteNote"
+    },
 
   initialize: function (){
     this.listenTo(this.collection, "sync", this.render);
 },
+
+  deleteNote: function(){
+    alert("Are you sure you want to destroy?");
+    this.model.destroy();
+  },
 
   handleInput: function(event) {
     this.debounced = this.debounced || _.debounce(this.saveNote, 500);
@@ -33,7 +39,7 @@ Feathernote.Views.NoteShow = Backbone.View.extend({
         menubar: false,
         selector: '#note-body',
         plugins: ["textcolor colorpicker preview print wordcount link image"],
-        toolbar: "preview print | undo redo | fontsizeselect forecolor backcolor | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+        toolbar: "preview print | undo redo | fontselect fontsizeselect forecolor backcolor | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
         setup: function (editor) {
                 editor.on('keyup',
                   function (event) {

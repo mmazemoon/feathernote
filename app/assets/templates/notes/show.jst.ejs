@@ -38,7 +38,7 @@
 
 <header class="note-show-bottom group">
   <div class="note-show-header-left">
-    <ul class="dates">
+    <ul class="dates clearfix">
       <li>Created: <%= note && moment(note.escape("created_at")).format('MMM D, YYYY') %></li>
       <li>Modified: <%= note && moment(note.escape("updated_at")).format('MMM D, YYYY') %></li>
     </ul>

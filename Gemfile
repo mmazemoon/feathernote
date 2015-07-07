@@ -14,10 +14,13 @@ gem 'backbone-on-rails'
 gem 'font-awesome-rails'
 gem 'tinymce-rails'
 gem "non-stupid-digest-assets"
+gem "seed_dump"
 
 
 group :development, :test do
   gem 'byebug'
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end

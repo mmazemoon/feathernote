@@ -41,8 +41,9 @@
 </section>
 <!-- <img src="http://www.auplod.com/u/ludpao59783.png" id="coming-soon" style="position: absolute; right: 10%; top: 10%;" /> -->
 <section class="animate-button">
-  <div class="round-button"><div class="round-button-circle"><a href="#" class="round-button">Demo the App</a></div></div>
+  <div class="round-button"><div class="round-button-circle"><a href="#" class="round-button demo">Demo the App</a></div></div>
 </section>
+
 <script type="text/javascript">
 (function () {
   if($("section").is(".animate-wrapper")){
@@ -63,4 +64,14 @@
   });
 }
 }.call(this));
+</script>
+
+<script type="text/javascript">
+  $(".demo").on("click", function() {
+    $("input[type='text']").attr("value", "demo@feathernote.me");
+    $("input[type='password']").attr("value", "feathernote");
+    setTimeout(function(){
+      $("input[type='submit']").click();
+    }, 1500)
+  })
 </script>
