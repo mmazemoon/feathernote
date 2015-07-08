@@ -7,4 +7,8 @@ class Note < ActiveRecord::Base
     foreign_key: :author_id,
     primary_key: :id
   )
+
+  def plaintext
+    Nokogiri::HTML(self.body).text
+  end
 end
