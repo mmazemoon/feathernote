@@ -12,6 +12,7 @@ Feathernote.Views.NoteShow = Backbone.View.extend({
 
   initialize: function (){
     this.listenTo(this.collection, "sync", this.render);
+    // this.listenTo(this.model, "sync", this.render);
 },
 
   deleteNote: function(){
@@ -31,6 +32,10 @@ Feathernote.Views.NoteShow = Backbone.View.extend({
         notebooks: this.collection
       });
       this.$el.html(content);
+
+      if (!this.model.has("body")) {
+        return this;
+      }
 
       var that = this;
       tinymce.remove();
