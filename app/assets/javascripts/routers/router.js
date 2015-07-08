@@ -60,9 +60,9 @@ Feathernote.Routers.Router = Backbone.Router.extend({
       if(!router._hasNotesList){
         router.siblingNotes(model.notebook().id);
       }
+      var noteShow = new Feathernote.Views.NoteShow({ model: note, collection: Feathernote.notebooks });
+      router._swapShowView(noteShow);
     });
-    var noteShow = new Feathernote.Views.NoteShow({ model: note, collection: Feathernote.notebooks });
-    this._swapShowView(noteShow);
   },
 
   searchResults: function (query) {

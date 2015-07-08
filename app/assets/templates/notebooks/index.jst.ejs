@@ -23,7 +23,9 @@
     <div class="sidebar-entry-left notebook">
       <a href="#/notes/all" class="group">
         <i class="fa fa-book fa-lg"></i>&nbsp;
-    All Notes (<%= Feathernote.notes.length %>)
+        <% var count = 0 %>
+        <% Feathernote.notebooks.each(function(notebook){ count += notebook.notes().length }) %>
+    All Notes (<%= count %>)
       </a>
     </div>
   </li>

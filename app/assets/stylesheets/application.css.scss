@@ -401,7 +401,9 @@ input.notes-search {
 
 	.button span:after
 	{
-	  content: ' ';
+		content: '+';
+		font-weight: bolder;
+		font-size: x-large;
 	  position: absolute;
 	  top: 0;
 	  right: -18px;
@@ -411,12 +413,10 @@ input.notes-search {
 	  margin-top: -10px;
 
 	  background: rgba(0, 0, 0, 0);
-	  border: 3px solid #FFF;
 	  border-top: none;
 	  border-right: none;
 
 	  transition: opacity 0.5s, top 0.5s, right 0.5s;
-	  transform: rotate(-45deg);
 	}
 
 	.button:hover span, .button:active span
@@ -429,8 +429,7 @@ input.notes-search {
 	  transition: opacity 0.5s, top 0.5s, right 0.5s;
 	  opacity: 1;
 	  border-color: #3B5999;
-	  right: 0;
-	  top: 50%;
+	  right: 6%;
 	}
 }
 
