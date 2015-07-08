@@ -37,7 +37,7 @@ Feathernote.Routers.Router = Backbone.Router.extend({
         Feathernote.notes.set(model.notes().models);
 
         this._hasNotesList = new Feathernote.Views.NotesIndex({
-          notebook: model,
+          notebook: model.escape("name"),
           collection: Feathernote.notes,
           id: Feathernote.notes.first().id });
           this.noteShow(Feathernote.notes.first().id);
@@ -48,11 +48,11 @@ Feathernote.Routers.Router = Backbone.Router.extend({
 
   noteShow: function(id){
     var note = Feathernote.notes.getOrFetch(id,
-      function(model){
-        var noteShow = new Feathernote.Views.NoteShow({ model: model, collection: Feathernote.notebooks });
+      function(model, response, options){
+        var noteShow = new Feathernote.Views.NoteShow({ model: note, collection: Feathernote.notebooks });
         this._swapShowView(noteShow);
         if(!this._hasNotesList){
-          this.siblingNotes(model.notebook().id);
+          this.siblingNotes(note.notebook().id);
         }
       }.bind(this));
   },
@@ -64,12 +64,12 @@ Feathernote.Routers.Router = Backbone.Router.extend({
         if (note.get("title") && note.get("title").match(re)) {
           return true;
         }
-        if (note.get("body") && note.get("body").match(re)){
+        if (note.get("plaintext") && note.get("plaintext").match(re)){
           return true;
         }
       });
     var searchCollection = new Feathernote.Collections.Notes(results);
-      this._hasNotesList = new Feathernote.Views.NotesIndex({ collection: searchCollection });
+      this._hasNotesList = new Feathernote.Views.NotesIndex({ collection: searchCollection, notebook: "Search Results" });
       this._swapListView(this._hasNotesList);
   },
 
@@ -79,7 +79,8 @@ Feathernote.Routers.Router = Backbone.Router.extend({
       function(model, response, options){
         Feathernote.notes.set(model.notes().models);
         this._hasNotesList = new Feathernote.Views.NotesIndex({
-          collection: Feathernote.notes
+          collection: Feathernote.notes,
+          notebook: Feathernote.notes.first().notebook().escape("name")
         });
         this._swapListView(this._hasNotesList);
       }.bind(this)

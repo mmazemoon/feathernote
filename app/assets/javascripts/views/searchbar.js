@@ -14,7 +14,7 @@ Feathernote.Views.Searchbar = Backbone.View.extend({
   createNote: function(event){
     var note = new Feathernote.Models.Note({
       title: "Untitled",
-      notebook_id: Feathernote.activeNotebook.id
+      notebook_id: Feathernote.notebooks.first().id
     });
     note.save({}, {
       success: function(){
@@ -33,5 +33,5 @@ Feathernote.Views.Searchbar = Backbone.View.extend({
     // in order to bookmark urls.
     // Feathernote.notes.fetch({ data: { query: query } });
   }
-  
+
 });

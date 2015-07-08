@@ -8,7 +8,7 @@ Feathernote.Views.NotesIndex = Backbone.View.extend({
     this.all = options.all || false;
     this.id = options.id || null;
     this.notebook = options.notebook || null;
-    this.listenTo(this.collection, "add remove change", this.render);
+    this.listenTo(this.collection, "add remove change sync", this.render);
   },
 
   render: function (){
@@ -30,7 +30,7 @@ Feathernote.Views.NotesIndex = Backbone.View.extend({
     if (this.all || this.id){
       Backbone.history.navigate(fragment);
     }
-    
+
     this.$el.html(content);
     return this;
   }

@@ -5,12 +5,8 @@ window.Feathernote = {
   Routers: {},
   initialize: function(options) {
     Feathernote.currentUser = options.currentUser;
-    Feathernote.notes = new Feathernote.Collections.Notes({
-      // success: function(){ Feathernote.activeNote = Feathernote.notes.first();}.bind(this)
-    });
-    Feathernote.notebooks = new Feathernote.Collections.Notebooks({
-      // success: function(){Feathernote.activeNotebook = Feathernote.notebooks.first();}.bind(this)
-    });
+    Feathernote.notes = new Feathernote.Collections.Notes();
+    Feathernote.notebooks = new Feathernote.Collections.Notebooks();
 
     new Feathernote.Routers.Router( {$rootEl: $("#maincontainer")} );
 
