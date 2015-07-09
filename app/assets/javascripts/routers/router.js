@@ -47,22 +47,17 @@ Feathernote.Routers.Router = Backbone.Router.extend({
   },
 
   noteShow: function(id){
-    // var note = Feathernote.notes.getOrFetch(id,
-    //   function(model, response, options){
-    //     var noteShow = new Feathernote.Views.NoteShow({ model: note, collection: Feathernote.notebooks });
-    //     this._swapShowView(noteShow);
-    //     if(!this._hasNotesList){
-    //       this.siblingNotes(note.notebook().id);
-    //     }
-    //   }.bind(this));
     var router = this;
-    var note = Feathernote.notes.getOrFetch(id, function (model) {
-      if(!router._hasNotesList){
-        router.siblingNotes(model.notebook().id);
-      }
-      var noteShow = new Feathernote.Views.NoteShow({ model: note, collection: Feathernote.notebooks });
-      router._swapShowView(noteShow);
-    });
+    var note = Feathernote.notes.getOrFetch(id,
+      function (model) {
+        if(!router._hasNotesList){
+          router.siblingNotes(model.notebook().id);
+        }
+        var noteShow = new Feathernote.Views.NoteShow({ model: note, collection: Feathernote.notebooks });
+        router._swapShowView(noteShow);
+      });
+    // var noteShow = new Feathernote.Views.NoteShow({ model: note, collection: Feathernote.notebooks });
+    // router._swapShowView(noteShow);
   },
 
   searchResults: function (query) {
@@ -88,7 +83,8 @@ Feathernote.Routers.Router = Backbone.Router.extend({
         Feathernote.notes.set(model.notes().models);
         this._hasNotesList = new Feathernote.Views.NotesIndex({
           collection: Feathernote.notes,
-          notebook: Feathernote.notes.first().notebook().escape("name")
+          notebook: Feathernote.notes.first().notebook().escape("name"),
+          id: model.id
         });
         this._swapListView(this._hasNotesList);
       }.bind(this)

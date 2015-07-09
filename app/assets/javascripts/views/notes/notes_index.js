@@ -14,22 +14,20 @@ Feathernote.Views.NotesIndex = Backbone.View.extend({
   render: function (){
     var content;
     var fragment = "notes/";
-
     if(this.all){
       content = this.template({ notes: this.collection, all: true, notebook: this.notebook });
-      if(this.id) {
-        fragment = fragment.concat("all/" + this.id);
-      } else {
-        fragment = fragment.concat("all/" + this.collection.first().id);
-      }
+      // if(this.id) {
+      //   fragment = fragment.concat("all/" + this.id);
+      // } else {
+      //   fragment = fragment.concat("all/" + this.collection.first().id);
+      // }
     } else {
       content = this.template({ notes: this.collection, all: false, notebook: this.notebook });
-      fragment = fragment.concat(this.id);
+      // fragment = fragment.concat(this.id);
     }
-
-    if (this.all || this.id){
-      Backbone.history.navigate(fragment);
-    }
+    // if (this.all || this.id){
+    //   Backbone.history.navigate(fragment);
+    // }
 
     this.$el.html(content);
     return this;
