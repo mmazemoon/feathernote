@@ -3,7 +3,8 @@ module Api
     def create
       @notebook = current_user.notebooks.new(notebook_params)
       if @notebook.save
-        render json: @notebook
+        # render json: @notebook
+        render :show
       else
         render json: @notebook.errors.full_messages, status: :unprocessable_entity
       end
@@ -16,6 +17,7 @@ module Api
 
     def update
       @notebook = current_user.notebooks.find(params[:id])
+      render :show
     end
 
     def destroy

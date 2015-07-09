@@ -3,7 +3,7 @@ module Api
     def create
       @note = current_user.notes.new(note_params)
       if @note.save
-        render json: @note
+        render :show
       else
         render json: @note.errors.full_messages, status: :unprocessable_entity
       end
@@ -12,12 +12,13 @@ module Api
     def show
       @note = current_user.notes.includes(:notebook).find(params[:id])
       render :show
+      # render json: note
     end
 
     def update
       @note = current_user.notes.find(params[:id])
       if @note.update(note_params)
-        render json: @note
+        render :show
       else
         render json: @note.errors.full_messages, status: :unprocessable_entity
       end
