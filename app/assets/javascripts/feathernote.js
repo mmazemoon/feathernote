@@ -15,7 +15,7 @@ window.Feathernote = {
     var $sidebar = $(".sidebar");
 
     Feathernote.notebooks.fetch({
-      success: function (){
+      success: function (collection){
         var notebooksIndex = new Feathernote.Views.NotebooksIndex({ collection: Feathernote.notebooks });
         $sidebar.html(notebooksIndex.render().$el);
       }, reset: true });

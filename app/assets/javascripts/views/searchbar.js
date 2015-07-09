@@ -14,11 +14,13 @@ Feathernote.Views.Searchbar = Backbone.View.extend({
   createNote: function(event){
     var note = new Feathernote.Models.Note({
       title: "Untitled",
-      body: " ", 
+      body: " ",
       notebook_id: Feathernote.notebooks.first().id
     });
     note.save({}, {
       success: function(){
+        Feathernote.notes.add(note);
+        Feathernote.notebooks.first().notes().add(note);
         Backbone.history.navigate("notes/" + note.id, { trigger: true });
       }
     });

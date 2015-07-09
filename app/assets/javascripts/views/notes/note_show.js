@@ -43,7 +43,7 @@ Feathernote.Views.NoteShow = Backbone.View.extend({
         menubar: false,
         selector: '#note-body',
         plugins: ["textcolor colorpicker preview print wordcount link image"],
-        toolbar: "preview print | undo redo | fontselect fontsizeselect forecolor backcolor | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+        toolbar: "preview print | undo redo | fontselect | fontsizeselect | forecolor backcolor | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
         setup: function (editor) {
                 editor.on('keyup',
                   function (event) {
