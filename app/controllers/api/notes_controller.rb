@@ -24,6 +24,10 @@ module Api
     end
 
     def destroy
+      @note = Note.find(params[:id])
+      @note.destroy
+      @note = current_user.notes.first
+      render json: @note
     end
 
     def index

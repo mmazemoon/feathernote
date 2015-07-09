@@ -3,8 +3,8 @@
     <div class="notebook-name dropdown-parent group">
       <div class="notebook-name-text">
         <i class="fa fa-book"></i>
-        <%= note && note.notebook().escape("name") %>
-        &nbsp; <i class="fa fa-angle-down"></i>
+        <%= note && note.notebook().escape("name") %> Notebook
+        <!-- &nbsp; <i class="fa fa-angle-down"></i> -->
       </div>
       <ul class="options-dropdown hidden">
         <% notebooks && notebooks.each(function(notebook) { %>
@@ -25,7 +25,7 @@
   </div>
 </div>
 <div class="note-show-save-status">
-  <i class="fa fa-floppy-o"></i><div id="save-status">Relax, your notes save automatically</div>
+  <i class="fa fa-floppy-o"></i><div id="save-status" style="color: #3B5999">Relax, your notes save automatically</div>
 </div>
 <div class="note-show-header-right top dropdown-parent">
   <div class="info-text">

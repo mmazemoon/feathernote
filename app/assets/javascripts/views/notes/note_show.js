@@ -16,12 +16,13 @@ Feathernote.Views.NoteShow = Backbone.View.extend({
 },
 
   deleteNote: function(){
-    alert("Are you sure you want to destroy?");
     this.model.destroy();
+    Backbone.history.navigate("notes/all", { trigger: true });
   },
 
   handleInput: function(event) {
     this.debounced = this.debounced || _.debounce(this.saveNote, 500);
+    $("#save-status").css({"color": "red"});
     $('#save-status').text('Saving... ');
     this.debounced(event);
   },
@@ -31,16 +32,14 @@ Feathernote.Views.NoteShow = Backbone.View.extend({
         note: this.model,
         notebooks: this.collection
       });
-      this.$el.html(content);
-
       if (!this.model.has("body")) {
         return this;
       }
-
+      this.$el.html(content);
       var that = this;
       tinymce.remove();
       tinyMCE.init({
-        forced_root_block: "",
+        // forced_root_block: "",
         menubar: false,
         selector: '#note-body',
         plugins: ["textcolor colorpicker preview print wordcount link image"],
@@ -60,7 +59,6 @@ Feathernote.Views.NoteShow = Backbone.View.extend({
                   });
               }
       });
-
     return this;
   },
 
@@ -68,6 +66,7 @@ Feathernote.Views.NoteShow = Backbone.View.extend({
     var attrs = $(event.currentTarget).serializeJSON();
     this.model.save(attrs, {
       success: function() {
+        $("#save-status").css({"color": "green"});
         $("#save-status").text("All changes saved to Feathernote");
       },
     });
