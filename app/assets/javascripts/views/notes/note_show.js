@@ -16,6 +16,8 @@ Feathernote.Views.NoteShow = Backbone.View.extend({
 },
 
   deleteNote: function(){
+    this.model.notebook().notes().remove(this.model);
+    Feathernote.notes.remove(this.model);
     this.model.destroy();
     Backbone.history.navigate("notes/all", { trigger: true });
   },

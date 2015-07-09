@@ -329,20 +329,20 @@ body{
 }
 
 .s-wrap-1{
-  float: left;
-  height: 48px;
-  width: 13%;
+	height: 48px;
+	margin-right: 3%;
 }
 
 #app-logo{
-  padding-left: 3%;
+  padding-left: 1.5%;
 }
 
 div.search-input{
-  float: left;
+	position: absolute;
+  bottom: 1%;
+  left: 15%;
   height: 48px;
-  width: 20%;
-  padding-top: 1em;
+  width: 245px;
 }
 
 
@@ -356,12 +356,13 @@ input.notes-search {
 }
 
 .new-note {
-	float: right;
-	box-sizing: border-box;
-	height: 48px;
-  width: 67%;
-	line-height: 56px;
-	padding-left: 3%;
+		position: absolute;
+  	bottom: 1%;
+	  left: 35%;
+	  box-sizing: border-box;
+	  height: 48px;
+	  width: 600px;
+	  padding-left: 3%;
 
 	.button
 	{
@@ -370,8 +371,8 @@ input.notes-search {
 	  text-align: center;
 	  color: #0C5;
 	  margin-left: 1em auto;
+		height: 32px;
 	  top:0; right:0; bottom:0; left:0;
-
 	  padding: 0.5% 1.5%;
 		background: #348AC7;
 	  border: 1px solid #3B5999;
