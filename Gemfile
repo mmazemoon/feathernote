@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
-ruby '2.3.0'
-gem 'rails', '4.2.1'
+ruby '2.4.10'
+gem 'rails', '4.2.8'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -15,7 +15,7 @@ gem 'font-awesome-rails'
 gem 'tinymce-rails'
 gem "non-stupid-digest-assets"
 gem "seed_dump"
-
+gem 'ejs', '~> 1.1', '>= 1.1.1'
 
 group :development, :test do
   gem 'better_errors'
