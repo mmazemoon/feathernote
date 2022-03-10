@@ -1,5 +1,9 @@
 # Feathernote
 
+[Feathernote.me][link]
+
+[link]: http://www.feathernote.me/ 
+
 ## Minimum Viable Product
 Feathernote is an open source note-taking app inspired by Evernote. It is built on Rails and Backbone. Users can:
 
