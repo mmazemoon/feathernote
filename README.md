@@ -29,8 +29,7 @@ Feathernote is an open source note-taking app inspired by Evernote. It is built 
 ## Implementation Timeline
 
 ### Phase 1: User Authentication, Note & Notebook Creation (~1 day)
-I will implement user authentication in Rails based on the practices learned at
-App Academy. By the end of this phase, users will be able to create notes and notebooks using
+I will implement user authentication in Rails. By the end of this phase, users will be able to create notes and notebooks using
 a simple text form in a Rails view. The most important part of this phase will
 be pushing the app to Heroku and ensuring that everything works before moving on
 to phase 2.
